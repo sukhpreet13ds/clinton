@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/button.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Dillon Media Group">
+            </a>
+            <ul class="nav-links">
+                <li class="has-mega">
+                    <a href="#">OUR SERVICES</a>
+                </li>
+                <li><a href="#">ABOUT US</a></li>
+
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-wrapper">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                    <button class="icon-btn search-toggle" id="searchToggle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+                <a href="#" class="contact-btn btn-animated">
+                    <span class="arrow-icon arr-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </span>
+                    <span class="text">Contact Us</span>
+                    <span class="circle"></span>
+                    <span class="arrow-icon arr-1">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+            <!-- MEGA MENU MOVED OUTSIDE NAV LINKS TO AVOID ANIMATION CONTAINING BLOCK ISSUE -->
+            <div class="mega-panel">
+                <div class="mega-grid">
+                    <!-- Item 1 -->
+                    <a href="index2.html" style="text-decoration: none;">
+
+                        <div class="mega-item">
+                            <div class="img-wrapper">
+                                <div class="mega-img" style="background-image: url('assets/mega5.jpg');"></div>
+                                <div class="hover-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="mega-title">Rondo Travel</span>
+                        </div>
+                    </a>
+                    <!-- Item 2 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega2.jpeg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Bank Dental</span>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega3.jpeg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Franklyn & Webster</span>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega4.webp');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Dan Rix Physio</span>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega1.jpg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Pawa Speed Sports</span>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega6.jpg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Hope Project Leeds</span>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega7.jpg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Charlie Croker MUA</span>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega8.jpg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">August & Piers</span>
+                    </div>
+                    <!-- Item 9 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega9.avif');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Brightbox</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <main>
+        <!-- Fixed Video Background Hero -->
+        <section class="second-hero-section">
+            <!-- Fixed video stays behind, content scrolls over -->
+            <div class="second-hero-video-wrap">
+                <video class="second-hero-video" autoplay muted loop playsinline>
+                    <source src="assets/2nd.webm" type="video/webm">
+                </video>
+                <!-- Subtle dark overlay -->
+                <div class="second-hero-overlay"></div>
+            </div>
+
+            <!-- Content floats over the fixed video -->
+           <div class="second-hero-content">
+    <h1 class="second-hero-heading">
+        FULL–SERVICE
+        <span>AGENCY</span>
+    </h1>
+
+    <p class="second-hero-subtext">
+       Your website ain't a technical manual, dude. So instead, get yourself a badass site where every block
+screams like a catchy, loud banner. We create ‘em by spicing up the messages, structuring the narrative,
+and complementing it all with emotional visuals to convert your visitors.
+    </p>
+</div>
+            
+        </section>
+
+        <!-- Scrollable content below (hero video stays fixed) -->
+        <div class="second-hero-scroll-content">
+            <!-- Infinite Brands Marquee -->
+            <section class="brands-marquee">
+                <div class="marquee-track">
+                    <div class="brand"><img src="assets/brand1.png" alt="Brand 1"></div>
+                    <div class="brand"><img src="assets/brand2.png" alt="Brand 2"></div>
+                    <div class="brand"><img src="assets/brand3.png" alt="Brand 3"></div>
+                    <div class="brand"><img src="assets/brand5.png" alt="Brand 5"></div>
+                    <div class="brand"><img src="assets/brand6.png" alt="Brand 6"></div>
+                </div>
+                <div class="marquee-track" aria-hidden="true">
+                    <div class="brand"><img src="assets/brand1.png" alt="Brand 1"></div>
+                    <div class="brand"><img src="assets/brand2.png" alt="Brand 2"></div>
+                    <div class="brand"><img src="assets/brand3.png" alt="Brand 3"></div>
+                    <div class="brand"><img src="assets/brand5.png" alt="Brand 5"></div>
+                    <div class="brand"><img src="assets/brand6.png" alt="Brand 6"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>

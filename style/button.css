@@ -1,0 +1,90 @@
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-animated .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--hover-bg, #800712);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.btn-animated:hover .circle {
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+}
+
+.btn-animated .text,
+.btn-animated .arr-1 {
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-animated .arr-2 {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn-animated:hover .text {
+  transform: translateX(36px);
+}
+
+.btn-animated:hover .arr-1 {
+  transform: translateX(60px);
+  opacity: 0;
+}
+
+.btn-animated:hover .arr-2 {
+  left: 10px;
+}
+
+/* Glitch text effect from button-text.txt */
+.btn-animated .text::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background-color: var(--hover-bg, #800712);
+}
+
+.btn-animated:hover .text::before {
+  animation: chitchat linear both 1.2s;
+}
+
+@keyframes chitchat {
+  0% { content: "#"; }
+  5% { content: "."; }
+  10% { content: "^{"; }
+  15% { content: "-!"; }
+  20% { content: "#$_"; }
+  25% { content: "№:0"; }
+  30% { content: "#{+."; }
+  35% { content: "@}-?"; }
+  40% { content: "?{4@%"; }
+  45% { content: "=.,^!"; }
+  50% { content: "?2@%"; }
+  55% { content: "\;1}]"; }
+  60% { content: "?{%:%"; right: 0; }
+  65% { content: "|{f[4"; right: 0; }
+  70% { content: "{4%0%"; right: 0; }
+  75% { content: "'1_0<"; right: 0; }
+  80% { content: "{0%"; right: 0; }
+  85% { content: "]>'"; right: 0; }
+  90% { content: "4"; right: 0; }
+  95% { content: "2"; right: 0; }
+  100% { content: ""; right: 0; }
+}
