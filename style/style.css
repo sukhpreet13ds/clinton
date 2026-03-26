@@ -3,7 +3,7 @@
 
 :root {
     --primary-color: #000;
-    --secondary-color: #ffffff;
+    --secondary-color: hsla(0, 0%, 100%, 1.00);
     --accent-color: #9D0917;
     --font-family: 'Space Grotesk', sans-serif;
 }
@@ -20,7 +20,23 @@ body {
     box-sizing: border-box;
     font-family: 'Space Grotesk', sans-serif;
 }
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
 
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var( --accent-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c40000c3;
+}
 .navbar {
     padding: 24px 40px;
     display: flex;
@@ -34,43 +50,122 @@ body {
 }
 
 .nav-container {
-    background-color: rgba(26, 26, 26, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(18, 18, 18, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 1800px;
-    padding: 12px 24px;
+    padding: 10px 24px;
     position: relative;
-
-    /* Advanced Entrance Animation */
-    transform-origin: center top;
-    animation: navPumpExpand 1.4s cubic-bezier(0.25, 1.4, 0.4, 1) forwards;
+    opacity: 0;
 }
 
-@keyframes navPumpExpand {
+/* Triggered after preloader exits */
+body.reveal-site .nav-container {
+    animation: navSlideDownReveal 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes navSlideDownReveal {
     0% {
         opacity: 0;
-        transform: translateY(-50px) scale(0.85) rotateX(-20deg);
-        clip-path: inset(0 50% 0 50% round 12px);
+        transform: translateY(-80px) scaleX(0.7);
+        filter: blur(15px);
     }
-
-    40% {
-        opacity: 1;
-        transform: translateY(12px) scale(1.03) rotateX(10deg);
-        clip-path: inset(-10% -5% -10% -5% round 12px);
-    }
-
-    70% {
-        transform: translateY(-4px) scale(0.98) rotateX(-5deg);
-    }
-
     100% {
         opacity: 1;
-        transform: translateY(0) scale(1) rotateX(0deg);
-        clip-path: inset(-20% -10% -300vh -10% round 12px);
+        transform: translateY(0) scaleX(1);
+        filter: blur(0px);
+    }
+}
+
+/* Base link style transition */
+.nav-links a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px; /* slightly cleaner Pro size */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+/* Pro Hover: Magnetic pill background */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    transform: scale(0.85);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-links a:hover,
+.nav-links li.has-mega:hover a,
+.nav-container:has(.mega-panel:hover) .has-mega a {
+    color: #fff;
+}
+
+.nav-links a:hover::before,
+.nav-links li.has-mega:hover a::before,
+.nav-container:has(.mega-panel:hover) .has-mega a::before {
+    opacity: 1;
+    transform: scale(1);
+    background: rgba(255, 10, 30, 0.12); /* subtle hint of brand */
+    border-color: rgba(157, 9, 23, 0.3);
+}
+
+/* Highlight the active text slightly more */
+.nav-links a:hover, 
+.nav-links li.has-mega:hover a,
+.nav-container:has(.mega-panel:hover) .has-mega a {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+}
+
+/* Premium Border Draw-Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid rgba(157, 9, 23, 0.6);
+    border-radius: 8px;
+    clip-path: inset(0 100% 0 100%); /* start drawn from middle */
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 2;
+}
+
+.nav-links a:hover::after,
+.nav-links li.has-mega:hover a::after,
+.nav-container:has(.mega-panel:hover) .has-mega a::after {
+    clip-path: inset(-10% -10% -10% -10%); /* expand outwards */
+    opacity: 1;
+}
+
+/* Logo: Cinematic Traverse from Right to Left on load */
+@keyframes logoTravelReveal {
+    0% {
+        opacity: 0;
+        transform: translateX(1200px) scale(0.9);
+        filter: blur(10px);
+    }
+    15% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
     }
 }
 
@@ -78,7 +173,12 @@ body {
     display: flex;
     align-items: center;
     opacity: 0;
-    animation: popItem 0.8s cubic-bezier(0.25, 1.5, 0.5, 1) forwards 0.3s;
+    z-index: 10;
+}
+
+body.reveal-site .logo {
+    /* starts at the far right and glides home */
+    animation: logoTravelReveal 2.1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
 }
 
 .logo img {
@@ -90,58 +190,39 @@ body {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 26px;
 }
 
-.nav-links li {
-    opacity: 0;
-    animation: popItem 0.8s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
-}
-
-.nav-links li:nth-child(1) {
-    animation-delay: 0.4s;
-}
-
-.nav-links li:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.nav-links li:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-.nav-links li:nth-child(4) {
-    animation-delay: 0.7s;
-}
-
-.nav-links li:nth-child(5) {
-    animation-delay: 0.8s;
-}
-
-@keyframes popItem {
+/* Simplified Link fade-up (No more jumping) */
+@keyframes linkFadeUp {
     0% {
         opacity: 0;
-        transform: translateY(15px) scale(0.9);
+        transform: translateY(10px);
     }
-
     100% {
         opacity: 1;
-        transform: none;
+        transform: translateY(0);
     }
 }
 
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    transition: color 0.3s;
+/* Staggered Reveal – triggered as logo traverses from right to left */
+.nav-links li {
+    opacity: 0;
 }
 
+body.reveal-site .nav-links li {
+    animation: linkFadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Staggering from RIGHT to LEFT to match logo glide path */
+body.reveal-site .nav-links li:nth-child(1) { animation-delay: 1.6s; } 
+body.reveal-site .nav-links li:nth-child(2) { animation-delay: 1.4s; }
+body.reveal-site .nav-links li:nth-child(3) { animation-delay: 1.2s; }
+body.reveal-site .nav-links li:nth-child(4) { animation-delay: 1.0s; } 
+body.reveal-site .nav-links li:nth-child(5) { animation-delay: 0.8s; }
+
 .nav-links a:hover {
-    color: var(--accent-color);
+    color: #fff;
 }
 
 /* MEGA MENU */
@@ -281,18 +362,25 @@ body {
     color: var(--accent-color);
 }
 
+/* Staggered Reveal – triggered as logo traverses from right to left */
 .nav-right {
     display: flex;
     align-items: center;
     gap: 20px;
+    opacity: 0;
+}
+body.reveal-site .nav-right {
+    animation: linkFadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.6s;
 }
 
 .search-wrapper {
+    position: relative;
     display: flex;
     align-items: center;
-    position: relative;
     opacity: 0;
-    animation: popItem 0.8s cubic-bezier(0.25, 1.5, 0.5, 1) forwards 0.8s;
+}
+body.reveal-site .search-wrapper {
+    animation: linkFadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.7s;
 }
 
 .search-input {
@@ -352,7 +440,9 @@ body {
     transition: background-color 0.3s;
     gap: 16px;
     opacity: 0;
-    animation: popItem 0.8s cubic-bezier(0.25, 1.5, 0.5, 1) forwards 1.0s;
+}
+body.reveal-site .contact-btn {
+    animation: linkFadeUp 0.8s cubic-bezier(0.25, 0.8, 0.2, 1) forwards 0.8s;
 }
 
 .contact-btn:hover {
