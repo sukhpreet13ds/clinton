@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 
 
 :root {
@@ -18,25 +18,27 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', sans-serif !important;
 }
+
 ::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
+    width: 3px;
+    height: 3px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+    background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var( --accent-color);
-  border-radius: 10px;
+    background-color: var(--accent-color);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #c40000c3;
+    background-color: #c40000c3;
 }
+
 .navbar {
     padding: 24px 40px;
     display: flex;
@@ -75,6 +77,7 @@ body.reveal-site .nav-container {
         transform: translateY(-80px) scaleX(0.7);
         filter: blur(15px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scaleX(1);
@@ -87,7 +90,8 @@ body.reveal-site .nav-container {
     position: relative;
     color: #ffffff;
     text-decoration: none;
-    font-size: 16px; /* slightly cleaner Pro size */
+    font-size: 16px;
+    /* slightly cleaner Pro size */
     font-weight: 500;
     letter-spacing: 0.5px;
     padding: 8px 16px;
@@ -121,12 +125,13 @@ body.reveal-site .nav-container {
 .nav-container:has(.mega-panel:hover) .has-mega a::before {
     opacity: 1;
     transform: scale(1);
-    background: rgba(255, 10, 30, 0.12); /* subtle hint of brand */
+    background: rgba(255, 10, 30, 0.12);
+    /* subtle hint of brand */
     border-color: rgba(157, 9, 23, 0.3);
 }
 
 /* Highlight the active text slightly more */
-.nav-links a:hover, 
+.nav-links a:hover,
 .nav-links li.has-mega:hover a,
 .nav-container:has(.mega-panel:hover) .has-mega a {
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
@@ -139,7 +144,8 @@ body.reveal-site .nav-container {
     inset: 0;
     border: 1.5px solid rgba(157, 9, 23, 0.6);
     border-radius: 8px;
-    clip-path: inset(0 100% 0 100%); /* start drawn from middle */
+    clip-path: inset(0 100% 0 100%);
+    /* start drawn from middle */
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     z-index: 2;
@@ -148,7 +154,8 @@ body.reveal-site .nav-container {
 .nav-links a:hover::after,
 .nav-links li.has-mega:hover a::after,
 .nav-container:has(.mega-panel:hover) .has-mega a::after {
-    clip-path: inset(-10% -10% -10% -10%); /* expand outwards */
+    clip-path: inset(-10% -10% -10% -10%);
+    /* expand outwards */
     opacity: 1;
 }
 
@@ -159,10 +166,12 @@ body.reveal-site .nav-container {
         transform: translateX(1200px) scale(0.9);
         filter: blur(10px);
     }
+
     15% {
         opacity: 1;
         filter: blur(0px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0) scale(1);
@@ -199,6 +208,7 @@ body.reveal-site .logo {
         opacity: 0;
         transform: translateY(10px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -215,11 +225,25 @@ body.reveal-site .nav-links li {
 }
 
 /* Staggering from RIGHT to LEFT to match logo glide path */
-body.reveal-site .nav-links li:nth-child(1) { animation-delay: 1.6s; } 
-body.reveal-site .nav-links li:nth-child(2) { animation-delay: 1.4s; }
-body.reveal-site .nav-links li:nth-child(3) { animation-delay: 1.2s; }
-body.reveal-site .nav-links li:nth-child(4) { animation-delay: 1.0s; } 
-body.reveal-site .nav-links li:nth-child(5) { animation-delay: 0.8s; }
+body.reveal-site .nav-links li:nth-child(1) {
+    animation-delay: 1.6s;
+}
+
+body.reveal-site .nav-links li:nth-child(2) {
+    animation-delay: 1.4s;
+}
+
+body.reveal-site .nav-links li:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+body.reveal-site .nav-links li:nth-child(4) {
+    animation-delay: 1.0s;
+}
+
+body.reveal-site .nav-links li:nth-child(5) {
+    animation-delay: 0.8s;
+}
 
 .nav-links a:hover {
     color: #fff;
@@ -369,6 +393,7 @@ body.reveal-site .nav-links li:nth-child(5) { animation-delay: 0.8s; }
     gap: 20px;
     opacity: 0;
 }
+
 body.reveal-site .nav-right {
     animation: linkFadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.6s;
 }
@@ -379,6 +404,7 @@ body.reveal-site .nav-right {
     align-items: center;
     opacity: 0;
 }
+
 body.reveal-site .search-wrapper {
     animation: linkFadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.7s;
 }
@@ -441,6 +467,7 @@ body.reveal-site .search-wrapper {
     gap: 16px;
     opacity: 0;
 }
+
 body.reveal-site .contact-btn {
     animation: linkFadeUp 0.8s cubic-bezier(0.25, 0.8, 0.2, 1) forwards 0.8s;
 }
@@ -910,11 +937,9 @@ body.reveal-site .contact-btn {
 .brands-marquee {
     position: relative;
     width: 100%;
-    background: #000;
     padding: 40px 0;
     overflow: hidden;
     display: flex;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .marquee-track {
@@ -962,11 +987,10 @@ body.reveal-site .contact-btn {
 }
 
 /* =========================================
-   SECOND HERO — FIXED VIDEO BACKGROUND
-   (index.html) All prefixed: second-hero-
+   SECOND HERO — FIXED VIDEO BACKGROUND 
+   (index2.html) All prefixed: second-hero-
    ========================================= */
 
-/* The section itself takes up full viewport height */
 .second-hero-section {
     position: relative;
     width: 100%;
@@ -975,141 +999,116 @@ body.reveal-site .contact-btn {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: transparent;
+    /* Changed to transparent to show the fixed video background */
 }
 
-/* Video wrapper is fixed to the viewport — stays put while page scrolls */
 .second-hero-video-wrap {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1;
+    z-index: -2;
+    background: #000;
+    /* Ensuring full screen black behind the contained video */
 }
 
-/* Video fills the fixed container — slightly scaled down */
 .second-hero-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    /* Avoids cutting graphics while being full screen */
     object-position: center center;
-    transform: scale(0.65); /* Further reduction as requested */
-    transform-origin: center center;
     display: block;
+    transform: scale(0.85);
+    /* Further reduced for the 'framed' look */
 }
 
-/* Very subtle dark overlay — just enough to make white text legible */
 .second-hero-overlay {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+    /* Ensuring overlay is behind content but on top of video */
 }
 
-/* Content centered over the video — tightly constrained */
 .second-hero-content {
     position: relative;
     z-index: 10;
-    /* text-align: center; */
-    max-width: 420px; /* Even narrower for the compact look */
     width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    gap: 12px;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
 }
 
-/* Giant bold heading matching the screenshot */
 .second-hero-heading {
-    font-size: clamp(3rem, 7.5vw, 6.2rem);
-    font-weight: 900;
-    line-height: 0.8; /* Ultra-tight line height */
-    letter-spacing: -6px; /* High compression as seen in reference */
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    min-width: 800px;
-}
-
-/* "AGENCY" on second line with wide spacing like screenshot */
-.second-hero-heading span {
-    display: block;
-    padding-left: 0;
-    font-weight: 400;
-    letter-spacing: 8px; /* Wide tracking for AGENCY */
-    font-size: 0.65em;
-    margin-top: 10px;
-    text-align: end;
-}
-
-/* Subtle body text below — very narrow width requested */
-.second-hero-subtext {
-    font-size: 20px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.6);
-
-    max-width: 900px;   /* control width properly */
-    width: 100%;
-
-    margin: 0 auto;     /* centers horizontally */
-    text-align: center;
-
-    font-weight: 300;
-    margin-top: 140px;   /* reduce from 150px (too much) */
-
-}
-
-/* Scroll content (marquee, etc.) sits above the fixed video */
-.second-hero-scroll-content {
-    position: relative;
-    z-index: 1;
-    background: #000;
-}
-
-.second-hero-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-
-    max-width: 1000px;
-    margin: 0 auto;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: fit-content;
+    pointer-events: auto;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900 !important;
+    font-size: 90px !important;
+
 }
 
-
-.second-hero-heading {
-    font-size: clamp(3rem, 7vw, 6rem);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -3px;
-    color: #fff;
+/* Static Title Styles */
+.second-hero-heading .shine-text {
+    line-height: 0.8;
+    letter-spacing: -4px;
+    margin-right: 140px;
     text-transform: uppercase;
-
-    position: relative;
 }
 
-.second-hero-heading span {
-    position: absolute;
-    right: 0;
-    top: 90%;   /* pushes it slightly down */
-
-    font-weight: 400;
-    letter-spacing: 6px;
-    font-size: 0.8em;
+/* Dynamic Word Cycler Styles */
+.second-hero-heading .word-cycler {
+    margin-top: -5px;
+    margin-left: 280px;
+    /* Moved more to the right as requested */
+    font-size: 70px !important;
+    /* Increased to 90px as requested */
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    display: block !important;
+    text-align: left;
 }
 
-
+/* Paragraph positioned at bottom */
 .second-hero-subtext {
-    max-width: 800px;
-    font-size: 20px;
+    position: absolute;
+    bottom: 80px;
+    /* Around calc(100vh - 100px) as requested */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1100px;
+    width: 90%;
+    font-size: 26px;
+    /* Increased from 22px as requested */
     line-height: 1.6;
-    color: rgba(255,255,255,0.6);
-
-    margin-top: 240px;
+    color: #ffffff !important;
+    /* Pure white as requested */
+    font-weight: 400;
     text-align: center;
+    pointer-events: auto;
+    opacity: 0.85;
+    margin: 0;
+    font-family: 'Inter', sans-serif !important;
+
+}
+
+/* Ensure site is visible after preloader */
+body.reveal-site .second-hero-content {
+    opacity: 1;
+}
+
+.second-hero-scroll-content {
+    position: relative;
+    z-index: 1;
 }
