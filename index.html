@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style/index2.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body class="preloader-active">
@@ -23,6 +24,7 @@
             <a href="index.html" class="logo">
                 <img src="assets/logo.png" alt="Dillon Media Group">
             </a>
+
             <ul class="nav-links">
                 <li class="has-mega">
                     <a href="#">OUR SERVICES</a>
@@ -43,6 +45,16 @@
                         </svg>
                     </button>
                 </div>
+
+                <!-- Mobile Toggle -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
                 <a href="#" class="contact-btn btn-animated">
                     <span class="arrow-icon arr-2">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -70,7 +82,7 @@
 
                         <div class="mega-item">
                             <div class="img-wrapper">
-                                <div class="mega-img" style="background-image: url('assets/mega5.jpg');"></div>
+                                <div class="mega-img" style="background-image: url('assets/rings.jpg');"></div>
                                 <div class="hover-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -79,7 +91,7 @@
                                     </svg>
                                 </div>
                             </div>
-                            <span class="mega-title">Rondo Travel</span>
+                            <span class="mega-title">RINGS HERO PAGE</span>
                         </div>
                     </a>
                     <!-- Item 2 -->
@@ -94,7 +106,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="mega-title">Bank Dental</span>
+                        <span class="mega-title">Digital Marketing</span>
                     </div>
                     <!-- Item 3 -->
                     <div class="mega-item">
@@ -108,7 +120,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="mega-title">Franklyn & Webster</span>
+                        <span class="mega-title">SOCIAL MEDIA MANAGEMENT</span>
                     </div>
                     <!-- Item 4 -->
                     <div class="mega-item">
@@ -122,7 +134,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="mega-title">Dan Rix Physio</span>
+                        <span class="mega-title">VIDEO PRODUCTION</span>
                     </div>
                     <!-- Item 5 -->
                     <div class="mega-item">
@@ -136,7 +148,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="mega-title">Pawa Speed Sports</span>
+                        <span class="mega-title">WEBSITE DESIGN</span>
                     </div>
                     <!-- Item 6 -->
                     <div class="mega-item">
@@ -150,7 +162,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="mega-title">Hope Project Leeds</span>
+                        <span class="mega-title">PRINT MARKETING</span>
                     </div>
                     <!-- Item 7 -->
                     <div class="mega-item">
@@ -178,7 +190,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="mega-title">August & Piers</span>
+                        <span class="mega-title">AUGUST & PIERS</span>
                     </div>
                     <!-- Item 9 -->
                     <div class="mega-item">
@@ -192,7 +204,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="mega-title">Brightbox</span>
+                        <span class="mega-title">RINGS HERO PAGE</span>
                     </div>
                 </div>
             </div>
@@ -200,33 +212,77 @@
         </div>
     </nav>
 
-    <main>
-        <section class="second-hero-section" id="hero-vanta-container">
-            <!-- <div id="vanta-hero-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -2; pointer-events: none;"></div> -->
-
-
-            <div class="second-hero-video-wrap">
-                <video class="second-hero-video" autoplay muted loop playsinline>
-                    <source src="assets/2nd.webm" type="video/webm">
-                </video>
-                <div class="second-hero-overlay"></div>
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <img src="assets/logo.png" alt="logo">
             </div>
-
-            <div class="second-hero-content">
-                <h1 class="second-hero-heading">
-                    <span class="shine-text">FULL–SERVICE</span>
-                    <span class="word-cycler"><span id="wordTrack" class="word-track">AD AGENCY</span></span>
-                </h1>
-
-                <p class="second-hero-subtext">
-                    Dillon Media Group is your one-stop powerhouse for building and promoting your brand. With 100+
-                    years of combined experience, we craft bold messaging, compelling stories, and visuals that grab
-                    attention and drive results.
-                </p>
+            <div class="mobile-close" id="mobileClose">
+                <div class="close-pill">
+                    <i class="bi bi-x-lg"></i>
+                </div>
             </div>
+        </div>
 
-        </section>
+        <div class="mobile-links">
+            <div class="mobile-link-item"><a href="index.html">HOME</a></div>
+            <div class="mobile-link-item has-dropdown">
+                <div class="dropdown-trigger" id="servicesTrigger">
+                    <span>OUR SERVICES</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="index2.html">RINGS HERO PAGE <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">TRADITIONAL MEDIA <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">DIGITAL MARKETING <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">SMM <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">VIDEO PRODUCTION <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">WEBSITE DESIGN <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                </div>
+            </div>
+            <div class="mobile-link-item"><a href="#">ABOUT US</a></div>
+            <div class="mobile-link-item"><a href="#">BLOGS</a></div>
+            <div class="mobile-link-item"><a href="#">CONTACT US</a></div>
 
+            <a href="#" class="mobile-contact-btn">HIRE US NOW</a>
+        </div>
+
+        <div class="mobile-footer">
+            <div class="mobile-video-wrap">
+                <iframe src="https://player.vimeo.com/video/662073747?h=7eaada5a82&autoplay=1&loop=1&background=1"
+                    allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <p class="mobile-footer-text">Dillon Media Group.</p>
+        </div>
+    </div>
+
+
+    <section class="second-hero-section" id="hero-vanta-container">
+        <!-- <div id="vanta-hero-bg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -2; pointer-events: none;"></div> -->
+
+
+        <div class="second-hero-video-wrap">
+            <video class="second-hero-video" autoplay muted loop playsinline>
+                <source src="assets/2nd.webm" type="video/webm">
+            </video>
+            <div class="second-hero-overlay"></div>
+        </div>
+
+        <div class="second-hero-content">
+            <h1 class="second-hero-heading">
+                <span class="shine-text">FULL–SERVICE</span>
+                <span class="word-cycler"><span id="wordTrack" class="word-track">AD AGENCY</span></span>
+            </h1>
+
+            <p class="second-hero-subtext">
+                Dillon Media Group is your one-stop powerhouse for building and promoting your brand. With 100+
+                years of combined experience, we craft bold messaging, compelling stories, and visuals that grab
+                attention and drive results.
+            </p>
+        </div>
+
+    </section>
+    <main class="main-content">
         <div class="second-hero-scroll-content">
             <section class="brands-marquee">
                 <div class="marquee-track">
@@ -341,7 +397,10 @@
                     </div>
                 </div>
             </div>
+
         </section>
+
+
         <section class="success-stories-section">
             <div class="success-header">
                 <h2 class="stories-heading"><span class="light">SUCCESS</span><br>STORIES</h2>
@@ -444,11 +503,14 @@
                     <div class="gc-content-wrap">
                         <div class="gc-card reveal-zoom">
                             <p class="gc-quote">
-                                Clinton Grubbs launched Dillon Media Group in 2020 under the Dillon Video Productions
+                                Clinton Grubbs launched Dillon Media Group in 2020 under the Dillon Video
+                                Productions
                                 brand.
-                                As Marketing Director, he leads everything from brand strategy and campaign development
+                                As Marketing Director, he leads everything from brand strategy and campaign
+                                development
                                 to
-                                web design and client communication. His goal is helping our clients share their message
+                                web design and client communication. His goal is helping our clients share their
+                                message
                                 and
                                 grow their reach.
                             </p>
@@ -457,7 +519,8 @@
                                     <img src="assets/clinton1.jpg" alt="Clinton Grubbs">
                                 </div>
                                 <div class="gc-user-details">
-                                    <p class="u-name">Clinton Grubbs, Director of Marketing, <br> (Digital Marketing,
+                                    <p class="u-name">Clinton Grubbs, Director of Marketing, <br> (Digital
+                                        Marketing,
                                         Web Design)</p>
                                 </div>
                             </div>
@@ -483,7 +546,8 @@
                                     <img src="assets/jeff1.jpg" alt="Jeff">
                                 </div>
                                 <div class="gc-user-details">
-                                    <p class="u-name">Jeff Miller, Technical Director, <br> (Full-Stack Architecture,
+                                    <p class="u-name">Jeff Miller, Technical Director, <br> (Full-Stack
+                                        Architecture,
                                         API Opt)</p>
                                 </div>
                             </div>
@@ -509,7 +573,8 @@
                                     <img src="assets/kristina1.jpg" alt="Kristina">
                                 </div>
                                 <div class="gc-user-details">
-                                    <p class="u-name">Kristina Volm, Creative Director, <br> (Visual Storytelling, Brand
+                                    <p class="u-name">Kristina Volm, Creative Director, <br> (Visual Storytelling,
+                                        Brand
                                         ID)</p>
                                 </div>
                             </div>
@@ -525,8 +590,10 @@
                     <div class="gc-content-wrap">
                         <div class="gc-card reveal-zoom">
                             <p class="gc-quote">
-                                TJ oversees project management and client delivery, ensuring that every milestone is met
-                                with precision. His focus on organizational excellence and streamlined workflows keeps
+                                TJ oversees project management and client delivery, ensuring that every milestone is
+                                met
+                                with precision. His focus on organizational excellence and streamlined workflows
+                                keeps
                                 our most ambitious digital projects on track and consistently under budget.
                             </p>
                             <div class="gc-user">
@@ -534,7 +601,8 @@
                                     <img src="assets/tj1.jpg" alt="TJ">
                                 </div>
                                 <div class="gc-user-details">
-                                    <p class="u-name">TJ Harris, Operations Manager, <br> (Project Logistics, Delivery
+                                    <p class="u-name">TJ Harris, Operations Manager, <br> (Project Logistics,
+                                        Delivery
                                         Excellence)</p>
                                 </div>
                             </div>
@@ -563,7 +631,770 @@
                 </button>
             </div>
         </section>
+        <section class="sauce-section">
+            <div class="sauce-container">
+                <div class="sauce-header">
+                    <div class="sauce-title">
+                        <h2 class="reveal-down">DILLON MEDIA</h2>
+                        <h3 class="reveal-down">THE SECRET SAUCE</h3>
+                    </div>
+                    <p class="sauce-intro reveal-down">Why do revamp your site through website design services</p>
+                </div>
+                <div class="sauce-grid">
+                    <!-- Box 1 -->
+                    <div class="sauce-item reveal-zoom">
+                        <div class="sauce-item-top">
+                            <video autoplay muted loop playsinline class="sauce-video">
+                                <source src="assets/black-hole-vd.webm" type="video/webm">
+                            </video>
+                            <span class="sauce-number">01</span>
+                        </div>
+                        <div class="sauce-divider"></div>
+                        <div class="sauce-item-content">
+                            <div class="sauce-stat">
+                                <div class="stat-val-wrap">
+                                    <span class="stat-number" data-target="100">0</span><span class="stat-unit">%</span>
+                                </div>
+                                <p class="stat-label">IN-HOUSE TEAM</p>
+                            </div>
+                            <img src="assets/star.png" class="sauce-star" alt="star">
+                        </div>
+                    </div>
+
+                    <!-- Box 2 -->
+                    <div class="sauce-item reveal-zoom">
+                        <div class="sauce-item-top">
+                            <video autoplay muted loop playsinline class="sauce-video">
+                                <source src="assets/black-hole-vd.webm" type="video/webm">
+                            </video>
+                            <span class="sauce-number">02</span>
+                        </div>
+                        <div class="sauce-divider"></div>
+                        <div class="sauce-item-content">
+                            <div class="sauce-stat">
+                                <div class="stat-val-wrap">
+                                    <span class="stat-number" data-target="3">0</span><span
+                                        class="stat-unit">-</span><span class="stat-number" data-target="4">0</span>
+                                </div>
+                                <p class="stat-label">EXPERTS PER PROJECT</p>
+                            </div>
+                            <img src="assets/star.png" class="sauce-star" alt="star">
+                        </div>
+                    </div>
+
+                    <!-- Box 3 -->
+                    <div class="sauce-item reveal-zoom">
+                        <div class="sauce-item-top">
+                            <video autoplay muted loop playsinline class="sauce-video">
+                                <source src="assets/black-hole-vd.webm" type="video/webm">
+                            </video>
+                            <span class="sauce-number">03</span>
+                        </div>
+                        <div class="sauce-divider"></div>
+                        <div class="sauce-item-content">
+                            <div class="sauce-stat">
+                                <div class="stat-val-wrap">
+                                    <span class="stat-number" data-target="500">0</span><span class="stat-unit">+</span>
+                                </div>
+                                <p class="stat-label">WEBSITES BUILT + MANAGED</p>
+                            </div>
+                            <img src="assets/star.png" class="sauce-star" alt="star">
+                        </div>
+                    </div>
+
+                    <!-- Box 4 -->
+                    <div class="sauce-item reveal-zoom">
+                        <div class="sauce-item-top">
+                            <video autoplay muted loop playsinline class="sauce-video">
+                                <source src="assets/black-hole-vd.webm" type="video/webm">
+                            </video>
+                            <span class="sauce-number">04</span>
+                        </div>
+                        <div class="sauce-divider"></div>
+                        <div class="sauce-item-content">
+                            <div class="sauce-stat">
+                                <div class="stat-val-wrap">
+                                    <span class="stat-number" data-target="100">0</span><span class="stat-unit">+</span>
+                                </div>
+                                <p class="stat-label">COMBINED YEARS OF EXPERIENCE</p>
+                            </div>
+                            <img src="assets/star.png" class="sauce-star" alt="star">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="book-now-dillion-section">
+            <div class="book-card-container reveal-zoom">
+                <img src="assets/book-bg.png" alt="background" class="book-bg-img">
+
+                <div class="book-content-wrapper">
+                    <div class="book-text-area">
+                        <h2>WANNA FREE WEBSITE <br> <strong>AUDIT</strong> OR A GTM <br> DESIGN PLAN?</h2>
+                        <p>Hop on a 30-min call to unlock the potential of your business.</p>
+                    </div>
+
+                    <div class="book-cta-wrap">
+                        <a href="#" class="book-cta-circle">
+                            <div
+                                style="display: flex; align-items: center; justify-content: center; gap: 15px; width: 100%;">
+                                <div style="text-align: right;">
+                                    <span>BOOK FREE</span>
+                                    <strong>CALL</strong>
+                                </div>
+                                <div class="book-cta-icon">
+                                    <svg fill="#ffffff" height="60px" width="60px" version="1.1" id="Capa_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 375.01 375.01" xml:space="preserve" stroke="#ffffff">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <g>
+                                                <g>
+                                                    <path
+                                                        d="M330.254,210.966c-56.916,1.224-110.16,25.704-167.076,28.764c-16.524,0.612-33.048-1.224-45.9-8.568 c23.256-4.283,45.288-12.239,61.812-27.54c17.749-15.911,19.584-45.287,8.568-66.095c-10.404-19.584-36.72-20.196-55.08-15.3 C89.125,132.63,59.75,184.65,84.229,221.369c-26.928,1.836-53.856,0-80.172,1.225c-5.508,0.611-5.508,8.567,0.612,8.567 c26.928,1.836,59.364,4.284,91.188,2.448c1.836,1.225,3.672,3.061,5.508,4.284c64.872,45.288,159.732-11.628,229.5-13.464 C338.821,223.817,338.821,210.354,330.254,210.966z M89.737,196.277c-6.732-25.091,15.3-46.511,35.496-56.916 c20.196-10.404,48.96-10.404,55.692,15.912c7.956,30.6-18.36,48.959-43.452,56.916c-11.628,3.672-22.644,6.12-34.272,7.344 C96.47,213.413,92.186,206.069,89.737,196.277z">
+                                                    </path>
+                                                    <path
+                                                        d="M371.869,211.577c-8.567-5.508-16.523-11.016-24.479-16.523c-6.732-4.896-13.464-10.404-21.42-12.24 c-6.12-1.836-12.24,7.344-6.732,11.627c6.732,4.896,14.076,9.18,20.809,13.464c4.896,3.061,9.792,6.732,14.075,9.792 c-4.896,2.448-9.792,4.284-14.688,6.732c-3.672,1.836-7.956,3.672-11.628,5.508c-1.224,0.612-2.448,1.836-3.061,3.06 c-1.836,2.448-0.611,1.225,0,0.612c-2.447,1.836-2.447,7.956,1.837,7.344l0,0c1.224,0.612,2.447,0.612,4.283,0.612 c4.284-1.224,9.181-3.06,13.464-4.896c9.181-3.673,18.36-7.345,26.929-12.24C376.153,220.758,376.153,214.025,371.869,211.577z">
+                                                    </path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <img src="assets/book-girl.png" alt="girl" class="book-girl-img">
+            </div>
+
+            <!-- Mobile Only CTA (Outside the card) -->
+            <div class="book-cta-mobile-wrap">
+                <a href="#" class="book-cta-mobile">
+                    <div class="cta-mobile-inner">
+                        <div class="cta-mobile-text">
+                            <span>BOOK FREE</span>
+                            <strong>CALL</strong>
+                        </div>
+                        <div class="cta-mobile-icon">
+                            <svg fill="#ffffff" viewBox="0 0 375.01 375.01">
+                                <path
+                                    d="M330.254,210.966c-56.916,1.224-110.16,25.704-167.076,28.764c-16.524,0.612-33.048-1.224-45.9-8.568 c23.256-4.283,45.288-12.239,61.812-27.54c17.749-15.911,19.584-45.287,8.568-66.095c-10.404-19.584-36.72-20.196-55.08-15.3 C89.125,132.63,59.75,184.65,84.229,221.369c-26.928,1.836-53.856,0-80.172,1.225c-5.508,0.611-5.508,8.567,0.612,8.567 c26.928,1.836,59.364,4.284,91.188,2.448c1.836,1.225,3.672,3.061,5.508,4.284c64.872,45.288,159.732-11.628,229.5-13.464 C338.821,223.817,338.821,210.354,330.254,210.966z M89.737,196.277c-6.732-25.091,15.3-46.511,35.496-56.916 c20.196-10.404,48.96-10.404,55.692,15.912c7.956,30.6-18.36,48.959-43.452,56.916c-11.628,3.672-22.644,6.12-34.272,7.344 C96.47,213.413,92.186,206.069,89.737,196.277z">
+                                </path>
+                                <path
+                                    d="M371.869,211.577c-8.567-5.508-16.523-11.016-24.479-16.523c-6.732-4.896-13.464-10.404-21.42-12.24 c-6.12-1.836-12.24,7.344-6.732,11.627c6.732,4.896,14.076,9.18,20.809,13.464c4.896,3.061,9.792,6.732,14.075,9.792 c-4.896,2.448-9.792,4.284-14.688,6.732c-3.672,1.836-7.956,3.672-11.628,5.508c-1.224,0.612-2.448,1.836-3.061,3.06 c-1.836,2.448-0.611,1.225,0,0.612c-2.447,1.836-2.447,7.956,1.837,7.344l0,0c1.224,0.612,2.447,0.612,4.283,0.612 c4.284-1.224,9.181-3.06,13.464-4.896c9.181-3.673,18.36-7.345,26.929-12.24C376.153,220.758,376.153,214.025,371.869,211.577z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+
+
+        <section class="we-do-dillion-section">
+            <div class="we-do-container">
+                <div class="we-do-header">
+                    <div class="we-do-title-wrap">
+                        <h2 class="reveal-down">THIS IS HOW</h2>
+                        <h3 class="reveal-down we-do-title2">WE DO IT</h3>
+                    </div>
+                    <div class="we-do-intro reveal-down">
+                        <p>From high-impact websites and scroll-stopping content to TV, radio, and billboard
+                            advertising—we
+                            bring every piece together to build, promote, and grow your brand everywhere it matters.</p>
+                    </div>
+                </div>
+
+                <div class="we-do-main">
+                    <div class="we-do-visual reveal-zoom">
+                        <video autoplay muted loop playsinline class="we-do-video">
+                            <source src="assets/card-vd.webm" type="video/webm">
+                        </video>
+                    </div>
+                    <div class="we-do-content-card reveal-zoom" id="weDoCard">
+                        <h4 class="we-do-stair-title" id="stairTitle">DISCOVER</h4>
+                        <p class="we-do-stair-desc" id="stairDesc">We dive deep into your brand, audience, and goals to
+                            uncover insights that shape a strong, results-driven marketing foundation.</p>
+                    </div>
+                </div>
+
+                <div class="we-do-bottom">
+                    <div class="we-do-tabs">
+                        <div class="we-do-tab active" data-index="0">
+                            <span class="we-do-tab-num">01</span>
+                            <span class="we-do-tab-label">DISCOVER</span>
+                        </div>
+                        <div class="we-do-tab" data-index="1">
+                            <span class="we-do-tab-num">02</span>
+                            <span class="we-do-tab-label">DEFINE</span>
+                        </div>
+                        <div class="we-do-tab" data-index="2">
+                            <span class="we-do-tab-num">03</span>
+                            <span class="we-do-tab-label">DESIGN</span>
+                        </div>
+                        <div class="we-do-tab" data-index="3">
+                            <span class="we-do-tab-num">04</span>
+                            <span class="we-do-tab-label">DEVELOP</span>
+                        </div>
+                        <div class="we-do-tab" data-index="4">
+                            <span class="we-do-tab-num">05</span>
+                            <span class="we-do-tab-label">DEPLOY</span>
+                        </div>
+                        <div class="we-do-tab" data-index="5">
+                            <span class="we-do-tab-num">06</span>
+                            <span class="we-do-tab-label">DRIVE GROWTH</span>
+                        </div>
+                    </div>
+
+                    <div class="we-do-nav">
+                        <div class="we-do-arrow" id="weDoPrev">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                        </div>
+                        <div class="we-do-arrow" id="weDoNext">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="support-dillion-section">
+            <div class="industries-container">
+                <div class="industries-header">
+                    <h2 class="reveal-zoom">INDUSTRIES</h2>
+                    <p class="reveal-zoom">A humble list of industries we operate in</p>
+                </div>
+
+                <div class="industries-grid">
+                    <!-- Column 1 -->
+                    <div class="industry-col">
+                        <div class="industry-item reveal-zoom">
+                            <div class="industry-head">
+                                <h4>B2B</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>Strategic digital solutions for complex business ecosystems. We help B2B brands
+                                    simplify their message and accelerate the sales cycle through data-driven
+                                    performance marketing.</p>
+                            </div>
+                        </div>
+                        <div class="industry-item reveal-zoom">
+                            <div class="industry-head">
+                                <h4>EDUCATION</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>Modern branding and enrollment strategies for the digital age. We connect educational
+                                    institutions with their ideal students through immersive storytelling and targeted
+                                    outreach.</p>
+                            </div>
+                        </div>
+                        <div class="industry-item active reveal-zoom">
+                            <div class="industry-head">
+                                <h4>REAL ESTATE</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>Looking to generate more leads and dominate your market? Dillon Media Group delivers
+                                    powerful
+                                    websites, high-impact content, and multi-channel advertising—from digital to TV,
+                                    radio,
+                                    and billboards—all designed to boost your visibility, engage your audience, and
+                                    drive
+                                    real results. With seamless user experiences, strategic messaging, and
+                                    performance-driven campaigns, we help your brand stand out and grow faster.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="industry-col">
+                        <div class="industry-item reveal-zoom">
+                            <div class="industry-head">
+                                <h4>B2C</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>Engaging consumer experiences that drive loyalty and sales. Our B2C strategies focus
+                                    on emotional connection and frictionless conversion across every touchpoint.</p>
+                            </div>
+                        </div>
+                        <div class="industry-item reveal-zoom">
+                            <div class="industry-head">
+                                <h4>HEALTH CARE</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>Trust-based marketing for healthcare providers. We combine compassionate messaging
+                                    with technical excellence to build patient trust and institutional authority.</p>
+                            </div>
+                        </div>
+                        <div class="industry-item reveal-zoom">
+                            <div class="industry-head">
+                                <h4>LAW</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>High-performance lead generation for legal firms. We help legal professionals
+                                    establish dominance in their practice areas through authoritative content and
+                                    strategic SEO.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="industry-col">
+                        <div class="industry-item reveal-zoom">
+                            <div class="industry-head">
+                                <h4>FOOD & BEVERAGE</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>Sensory-driven digital marketing for lifestyle brands. From high-end dining to mass
+                                    retail, we make brands look as good as they taste.</p>
+                            </div>
+                        </div>
+                        <div class="industry-item reveal-zoom">
+                            <div class="industry-head">
+                                <h4>FASHION</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>Trend-setting visual narratives for the fashion industry. We turn collections into
+                                    destinations through high-impact video and editorial-grade design.</p>
+                            </div>
+                        </div>
+                        <div class="industry-item reveal-zoom">
+                            <div class="industry-head">
+                                <h4>CONSTRUCTION</h4>
+                                <div class="industry-icon"></div>
+                            </div>
+                            <div class="industry-body">
+                                <p>Solid digital foundations for industrial and residential firms. We help construction
+                                    companies showcase their projects and win high-value contracts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="articles-section">
+            <div class="articles-container">
+                <div class="articles-header">
+                    <div class="articles-title">
+                        <h2 class="reveal-down">CHECK OUT <br><strong>RELATED ARTICLES</strong></h2>
+                    </div>
+                    <a href="#" class="all-articles-btn reveal-down">ALL ARTICLES</a>
+                </div>
+
+                <div class="articles-list">
+                    <!-- Article 1 -->
+                    <div class="article-item reveal-zoom">
+                        <div class="article-content">
+                            <h4 class="article-title">HOW TO CHOOSE THE BEST WEBSITE DESIGN COMPANY</h4>
+                            <div class="article-meta">
+                                <div class="meta-left">
+                                    <img src="assets/dillion-icon.png" alt="icon" class="meta-author-icon">
+                                    <span class="meta-author-name">Dillon Media</span>
+                                </div>
+                                <div class="meta-right">
+                                    <span class="meta-date">20 APR 2023</span>
+                                    <span class="meta-cat">WEB DESIGN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-img-wrap">
+                            <img src="assets/demo1.avif" alt="article">
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="article-item reveal-zoom">
+                        <div class="article-content">
+                            <h4 class="article-title">HOW TO REDESIGN A WEBSITE AND GET MORE LEADS</h4>
+                            <div class="article-meta">
+                                <div class="meta-left">
+                                    <img src="assets/dillion-icon.png" alt="icon" class="meta-author-icon">
+                                    <span class="meta-author-name">Dillon Media</span>
+                                </div>
+                                <div class="meta-right">
+                                    <span class="meta-date">08 JUN 2023</span>
+                                    <span class="meta-cat">WEB DESIGN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-img-wrap">
+                            <img src="assets/demo2.avif" alt="article">
+                        </div>
+                    </div>
+
+                    <!-- Hidden Article 3 (Same for now) -->
+                    <div class="article-item hidden-art">
+                        <div class="article-content">
+                            <h4 class="article-title">MASTERING THE ART OF CONVERSION-READY LANDING PAGES</h4>
+                            <div class="article-meta">
+                                <div class="meta-left">
+                                    <img src="assets/dillion-icon.png" alt="icon" class="meta-author-icon">
+                                    <span class="meta-author-name">Dillon Media</span>
+                                </div>
+                                <div class="meta-right">
+                                    <span class="meta-date">15 JUL 2023</span>
+                                    <span class="meta-cat">MARKETING</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-img-wrap">
+                            <img src="assets/demo3.jpg" alt="article">
+                        </div>
+                    </div>
+
+                    <!-- Hidden Article 4 (Same for now) -->
+                    <div class="article-item hidden-art">
+                        <div class="article-content">
+                            <h4 class="article-title">THE PSYCHOLOGY OF COLOR IN MODERN BRANDING</h4>
+                            <div class="article-meta">
+                                <div class="meta-left">
+                                    <img src="assets/dillion-icon.png" alt="icon" class="meta-author-icon">
+                                    <span class="meta-author-name">Dillon Media</span>
+                                </div>
+                                <div class="meta-right">
+                                    <span class="meta-date">22 AUG 2023</span>
+                                    <span class="meta-cat">BRANDING</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-img-wrap">
+                            <img src="assets/demo4.jpg" alt="article">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-more-container reveal-zoom">
+                    <button class="show-more-art-btn" id="showMoreBtn">SHOW MORE</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="book-service-form-classname-section">
+            <div class="book-service-form-classname-container reveal-zoom">
+                <div class="book-service-form-classname-left">
+                    <h2>LET'S <br>COLLAB</h2>
+
+                    <div class="book-service-form-classname-call-pill">
+                        <img src="assets/jeff1.jpg" alt="agent">
+                        <p>Book a call with Dillon Media</p>
+                    </div>
+
+                    <div class="book-service-form-classname-contacts">
+                        <a href="mailto:Info@dillonmediagroup.com">Info@dillonmediagroup.com</a>
+                        <span>352-895-0831</span>
+                    </div>
+                </div>
+
+                <div class="book-service-form-classname-right">
+                    <form action="#">
+                        <span class="book-service-form-classname-label">Services</span>
+                        <div class="book-service-form-classname-options" id="serviceOpts">
+                            <div class="book-service-form-classname-opt">Traditional Media</div>
+                            <div class="book-service-form-classname-opt active">SMM</div>
+                            <div class="book-service-form-classname-opt">Web Development</div>
+                            <div class="book-service-form-classname-opt">Video Production</div>
+                            <div class="book-service-form-classname-opt">Print Marketing</div>
+                            <div class="book-service-form-classname-opt">Event Management</div>
+                            <div class="book-service-form-classname-opt">SEO</div>
+                            <div class="book-service-form-classname-opt">TV Advertising</div>
+                            <div class="book-service-form-classname-opt">Billboard Advertising</div>
+                        </div>
+
+                        <span class="book-service-form-classname-label">Budget</span>
+                        <div class="book-service-form-classname-options" id="budgetOpts">
+                            <div class="book-service-form-classname-opt active">$15K-30K</div>
+                            <div class="book-service-form-classname-opt">$30K-70K</div>
+                            <div class="book-service-form-classname-opt">More than $70K</div>
+                        </div>
+
+                        <div class="book-service-form-classname-grid">
+                            <div class="book-service-form-classname-field">
+                                <input type="text" placeholder="Your Name">
+                            </div>
+                            <div class="book-service-form-classname-field">
+                                <input type="email" placeholder="Your email">
+                            </div>
+                            <div class="book-service-form-classname-field">
+                                <input type="text" placeholder="Job title">
+                            </div>
+                            <div class="book-service-form-classname-field has-select">
+                                <select id="findSelect">
+                                    <option value="" disabled selected>How did you find Dillon Media?</option>
+                                    <option value="google">Google</option>
+                                    <option value="facebook">Facebook</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="twitter">X (Twitter)</option>
+                                    <option value="linkedin">Linkedin</option>
+                                </select>
+                            </div>
+                            <div class="book-service-form-classname-field full">
+                                <textarea placeholder="Drop any details (Optional)" rows="2"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="book-service-form-classname-footer">
+                            <p class="book-service-form-classname-privacy">
+                                Curious how we handle your data with care? Scoop into our <a href="#">Privacy
+                                    Policy</a>.
+                            </p>
+                            <button type="submit" class="book-service-form-classname-submit">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="footer-section">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-socials">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+
+                    <div class="footer-links-grid">
+                        <div class="footer-col">
+                            <ul>
+                                <li><a href="#">Traditional Media</a></li>
+                                <li><a href="#">Digital Marketing</a></li>
+                                <li><a href="#">Social Media Management</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <ul>
+                                <li><a href="#">Video Production</a></li>
+                                <li><a href="#">Website Design</a></li>
+                                <li><a href="#">Print Marketing</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <ul>
+                                <li><a href="#">TV Advertising</a></li>
+                                <li><a href="#">Billboard Advertising</a></li>
+                                <li><a href="#">Radio Advertising</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal-left">
+                    <div class="made-in-usa">
+                        <img src="assets/us.svg" alt="us flag"> Made in USA
+                    </div>
+                    <div class="legal-links">
+                        <a href="#">COOKIES POLICY</a>
+                        <a href="#">PRIVACY POLICY</a>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    © 2028 Dillon Media Group. All Rights Reserved.
+                </div>
+
+                <button class="go-to-top-wrap" id="backToTop">
+                    <span class="go-to-top-text">GO TO THE TOP</span>
+                    <div class="go-to-top-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="19" x2="12" y2="5"></line>
+                            <polyline points="5 12 12 5 19 12"></polyline>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </footer>
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        (function () {
+            const items = document.querySelectorAll('.industry-item');
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all first to ensure only one is open
+                    items.forEach(other => other.classList.remove('active'));
+
+                    // If it wasn't active, open it now
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        })();
+    </script>
+
+
+
+    <script>
+        (function () {
+            const btn = document.getElementById('showMoreBtn');
+            const hiddenArticles = document.querySelectorAll('.article-item.hidden-art');
+            let isExpanded = false;
+
+            btn.addEventListener('click', () => {
+                isExpanded = !isExpanded;
+                if (isExpanded) {
+                    hiddenArticles.forEach(art => {
+                        art.classList.remove('hidden-art');
+                        art.classList.add('active-art');
+                    });
+                    btn.textContent = 'SHOW LESS';
+                } else {
+                    hiddenArticles.forEach(art => {
+                        art.classList.add('hidden-art');
+                        art.classList.remove('active-art');
+                    });
+                    btn.textContent = 'SHOW MORE';
+                }
+            });
+        })();
+    </script>
+
+
+
+    <script>
+        (function () {
+            // Toggle for Services (Multiple allow)
+            const sOpts = document.querySelectorAll('#serviceOpts .book-service-form-classname-opt');
+            sOpts.forEach(opt => {
+                opt.addEventListener('click', () => opt.classList.toggle('active'));
+            });
+
+            // Toggle for Budget (Single allow)
+            const bOpts = document.querySelectorAll('#budgetOpts .book-service-form-classname-opt');
+            bOpts.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    bOpts.forEach(o => o.classList.remove('active'));
+                    opt.classList.add('active');
+                });
+            });
+
+            // Select color change
+            const sel = document.getElementById('findSelect');
+            sel.addEventListener('change', () => {
+                if (sel.value !== "") sel.classList.add('has-val');
+                else sel.classList.remove('has-val');
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            const steps = [
+                { title: "DISCOVER", desc: "We dive deep into your brand, audience, and goals to uncover insights that shape a strong, results-driven marketing foundation." },
+                { title: "DEFINE", desc: "We create a clear, focused strategy that positions your brand to stand out, connect emotionally, and dominate across all marketing channels." },
+                { title: "DESIGN", desc: "We craft bold visuals and powerful messaging that grab attention, tell your story, and create lasting impressions with your target audience." },
+                { title: "DEVELOP", desc: "We build high-performing websites, campaigns, and content systems that work seamlessly together to deliver a smooth, engaging user experience." },
+                { title: "DEPLOY", desc: "We launch across digital, TV, radio, and outdoor platforms, ensuring your brand message reaches the right audience at the right time." },
+                { title: "DRIVE GROWTH", desc: "We track performance, optimize campaigns, and scale what works—turning clicks into conversions, leads into customers, and growth into long-term success." }
+            ];
+
+            let currentIdx = 0;
+            const card = document.getElementById('weDoCard');
+            const titleEl = document.getElementById('stairTitle');
+            const descEl = document.getElementById('stairDesc');
+            const tabs = document.querySelectorAll('.we-do-tab');
+            const nextBtn = document.getElementById('weDoNext');
+            const prevBtn = document.getElementById('weDoPrev');
+
+            function updateStep(idx) {
+                currentIdx = idx;
+
+                // Active Tab
+                tabs.forEach((t, i) => {
+                    t.classList.remove('active');
+                    if (i === idx) t.classList.add('active');
+                });
+
+                // Content Transition
+                card.classList.remove('card-fade-up');
+                void card.offsetWidth; // Trigger reflow
+
+                titleEl.textContent = steps[idx].title;
+                descEl.textContent = steps[idx].desc;
+                card.classList.add('card-fade-up');
+
+                // Auto-scroll tabs on mobile
+                const tabsContainer = document.querySelector('.we-do-tabs');
+                if (tabsContainer && window.innerWidth <= 1024) {
+                    const activeTab = tabs[idx];
+                    const scrollOffset = activeTab.offsetLeft - (tabsContainer.offsetWidth / 2) + (activeTab.offsetWidth / 2);
+                    tabsContainer.scrollTo({
+                        left: scrollOffset,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    updateStep(parseInt(tab.getAttribute('data-index')));
+                });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                let next = (currentIdx + 1) % steps.length;
+                updateStep(next);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                let prev = (currentIdx - 1 + steps.length) % steps.length;
+                updateStep(prev);
+            });
+        })();
+    </script>
+
+
+    <script>
+        (function () {
+            const btn = document.getElementById('backToTop');
+            btn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        })();
+    </script>
+
 
     <script src="script/script.js"></script>
     <div id="cur-dot"></div>
@@ -599,6 +1430,43 @@
 
             const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-zoom, .reveal-down');
             revealElements.forEach(el => revealObserver.observe(el));
+
+            // Continuous Looping Sauce Statistics Animation
+            const animateSauce = (num) => {
+                const target = parseInt(num.getAttribute('data-target'));
+                let current = 0;
+                const duration = 2000;
+                const increment = target / (duration / 20);
+
+                const updateValue = () => {
+                    current += increment;
+                    if (current < target) {
+                        num.textContent = Math.round(current);
+                        setTimeout(updateValue, 20);
+                    } else {
+                        num.textContent = target;
+                        // Wait 1 second then reset and restart
+                        setTimeout(() => {
+                            num.textContent = "0";
+                            animateSauce(num);
+                        }, 1000);
+                    }
+                };
+                updateValue();
+            };
+
+            const sauceCounterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const numbers = entry.target.querySelectorAll('.stat-number');
+                        numbers.forEach(num => animateSauce(num));
+                        sauceCounterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            const sauceGrid = document.querySelector('.sauce-grid');
+            if (sauceGrid) sauceCounterObserver.observe(sauceGrid);
         })();
     </script>
     <script>
@@ -807,7 +1675,7 @@
     <script>
         (function () {
             'use strict';
-            const words = ['SPEAK!', 'GROWTH!', 'INTELLLIGENCE!', 'PROFESSIONALS!'];
+            const words = ['SPEAK!', 'GROWTH!', 'INTELLIGENCE!', 'PROFESSIONAL!'];
             const track = document.getElementById('gcWordTrack');
             if (!track) return;
             let idx = 0;
@@ -902,6 +1770,83 @@
       });
     })();
     </script> -->
+    <script>
+        (function () {
+            const toggle = document.getElementById('mobileToggle');
+            const menu = document.getElementById('mobileMenu');
+            const close = document.getElementById('mobileClose');
+            const trigger = document.getElementById('servicesTrigger');
+            const mobileVids = document.querySelectorAll('.mobile-video-wrap video');
+
+            if (toggle && menu && close) {
+                toggle.addEventListener('click', () => {
+                    menu.classList.add('active');
+                    document.body.classList.add('menu-open');
+                });
+
+                close.addEventListener('click', () => {
+                    menu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                });
+            }
+
+            if (trigger) {
+                trigger.addEventListener('click', () => {
+                    trigger.parentElement.classList.toggle('active');
+                });
+            }
+
+            // Mobile search expand/collapse
+            const searchToggleBtn = document.getElementById('searchToggle');
+            const searchInputEl = document.getElementById('searchInput');
+            const navContainerEl = document.querySelector('.nav-container');
+
+            if (searchToggleBtn && navContainerEl) {
+                searchToggleBtn.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1366) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const isActive = navContainerEl.classList.toggle('search-active');
+                        if (isActive) {
+                            setTimeout(() => searchInputEl && searchInputEl.focus(), 60);
+                        } else {
+                            searchInputEl && searchInputEl.blur();
+                        }
+                    }
+                });
+
+                // Click anywhere outside search to close
+                document.addEventListener('click', (e) => {
+                    const searchWrapper = document.querySelector('.search-wrapper');
+                    if (navContainerEl.classList.contains('search-active')) {
+                        if (searchWrapper && !searchWrapper.contains(e.target)) {
+                            navContainerEl.classList.remove('search-active');
+                            if (searchInputEl) {
+                                searchInputEl.value = '';
+                                searchInputEl.blur();
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Mobile video play toggle (local video only)
+            document.querySelectorAll('.mobile-video-wrap').forEach(wrap => {
+                const vid = wrap.querySelector('video');
+                const overlay = wrap.querySelector('.play-overlay');
+                if (!vid) return;
+                wrap.addEventListener('click', () => {
+                    if (vid.paused) {
+                        vid.play();
+                        if (overlay) overlay.style.opacity = '0';
+                    } else {
+                        vid.pause();
+                        if (overlay) overlay.style.opacity = '1';
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>

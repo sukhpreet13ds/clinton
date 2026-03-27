@@ -200,6 +200,11 @@ body.reveal-site .logo {
     display: flex;
     align-items: center;
     gap: 26px;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.contact-btn {
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* Simplified Link fade-up (No more jumping) */
@@ -860,8 +865,8 @@ body.reveal-site .contact-btn {
 .hero-subtext {
     font-size: 20px;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.55);
-    max-width: 540px;
+    color: rgb(255, 255, 255);
+    max-width: 1200px;
 }
 
 .hero-actions {
@@ -940,6 +945,7 @@ body.reveal-site .contact-btn {
     padding: 40px 0;
     overflow: hidden;
     display: flex;
+    
 }
 
 .marquee-track {
@@ -951,6 +957,7 @@ body.reveal-site .contact-btn {
     gap: 8vw;
     padding-right: 8vw;
     animation: scrollMarquee 30s linear infinite;
+    background: transparent !important;
 }
 
 /* Pause BOTH tracks when hovering anywhere on the parent */
@@ -1066,19 +1073,7 @@ body.reveal-site .contact-btn {
     text-transform: uppercase;
 }
 
-/* Dynamic Word Cycler Styles */
-.second-hero-heading .word-cycler {
-    margin-top: -5px;
-    margin-left: 280px;
-    /* Moved more to the right as requested */
-    font-size: 70px !important;
-    /* Increased to 90px as requested */
-    font-weight: 900;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    display: block !important;
-    text-align: left;
-}
+
 
 /* Paragraph positioned at bottom */
 .second-hero-subtext {
@@ -1108,7 +1103,12 @@ body.reveal-site .second-hero-content {
     opacity: 1;
 }
 
+/* =============================================
+   HERO SECTION — MOBILE & PORTRAIT TABLET
+   ============================================= */
 .second-hero-scroll-content {
     position: relative;
     z-index: 1;
 }
+
+
