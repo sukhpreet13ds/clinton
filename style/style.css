@@ -116,13 +116,17 @@ body.reveal-site .nav-container {
 
 .nav-links a:hover,
 .nav-links li.has-mega:hover a,
-.nav-container:has(.mega-panel:hover) .has-mega a {
+.nav-links li.has-about-mega:hover a,
+.nav-container:has(.mega-panel:hover) .has-mega a,
+.nav-container:has(.about-mega-panel:hover) .has-about-mega a {
     color: #fff;
 }
 
 .nav-links a:hover::before,
 .nav-links li.has-mega:hover a::before,
-.nav-container:has(.mega-panel:hover) .has-mega a::before {
+.nav-links li.has-about-mega:hover a::before,
+.nav-container:has(.mega-panel:hover) .has-mega a::before,
+.nav-container:has(.about-mega-panel:hover) .has-about-mega a::before {
     opacity: 1;
     transform: scale(1);
     background: rgba(255, 10, 30, 0.12);
@@ -133,7 +137,9 @@ body.reveal-site .nav-container {
 /* Highlight the active text slightly more */
 .nav-links a:hover,
 .nav-links li.has-mega:hover a,
-.nav-container:has(.mega-panel:hover) .has-mega a {
+.nav-links li.has-about-mega:hover a,
+.nav-container:has(.mega-panel:hover) .has-mega a,
+.nav-container:has(.about-mega-panel:hover) .has-about-mega a {
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
 }
 
@@ -153,7 +159,9 @@ body.reveal-site .nav-container {
 
 .nav-links a:hover::after,
 .nav-links li.has-mega:hover a::after,
-.nav-container:has(.mega-panel:hover) .has-mega a::after {
+.nav-links li.has-about-mega:hover a::after,
+.nav-container:has(.mega-panel:hover) .has-mega a::after,
+.nav-container:has(.about-mega-panel:hover) .has-about-mega a::after {
     clip-path: inset(-10% -10% -10% -10%);
     /* expand outwards */
     opacity: 1;
@@ -389,6 +397,207 @@ body.reveal-site .nav-links li:nth-child(5) {
 
 .mega-item:hover .mega-title {
     color: var(--accent-color);
+}
+
+/* ABOUT MEGA MENU */
+.about-mega-panel {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1000;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+.about-mega-panel::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: transparent;
+}
+
+.nav-container:has(.has-about-mega:hover) .about-mega-panel,
+.about-mega-panel:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* PREMIUM CUSTOM CURSOR SYSTEM */
+#cur-dot, #cur-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 100000 !important; /* Above everything */
+    transition: opacity 0.3s ease, border 0.3s ease, background 0.4s ease, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), width 0.4s cubic-bezier(0.19, 1, 0.22, 1), height 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cur-dot {
+    width: 8px;
+    height: 8px;
+    background: #9D0917;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#cur-ring {
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+}
+
+#cur-text {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    text-align: left;
+}
+
+#cur-text .small {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#cur-text .big {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+#cur-icon {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover Expand State - Transforms from Circle to Pill */
+/* Hover Expand State - Transforms from Circle to Pill */
+#cur-ring.cur-expand {
+    width: 250px !important;
+    height: 70px !important;
+    background: rgba(10, 15, 22, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    border-radius: 100px !important;
+    padding: 0 25px 0 32px !important;
+    justify-content: space-between !important;
+    display: flex !important;
+}
+
+#cur-ring.cur-expand #cur-text,
+#cur-ring.cur-expand #cur-icon {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+}
+
+#cur-ring.cur-expand #cur-text > * {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+
+
+
+.about-mega-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    padding: 4px;
+}
+
+.about-mega-item {
+    background-color: #1a1a1c;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.about-mega-item .item-text {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.about-mega-item .item-arrow {
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.about-mega-item:hover {
+    background-color: #252528;
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about-mega-item:hover .item-text {
+    color: #fff;
+}
+
+.about-mega-item:hover .item-arrow {
+    color: #fff;
+    transform: translate(3px, -3px);
+}
+
+.about-mega-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.about-mega-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.about-mega-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
 /* Staggered Reveal – triggered as logo traverses from right to left */
@@ -887,7 +1096,7 @@ body.reveal-site .contact-btn {
     text-decoration: none;
     padding: 10px 10px 10px 22px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     transition: background-color 0.3s;
     white-space: nowrap;

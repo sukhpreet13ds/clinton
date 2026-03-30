@@ -43,7 +43,9 @@
 
       function buildSparkles() {
         sparkles = [];
-        for (let i = 0; i < 65; i++) {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        const count = isLight ? 14 : 32; /* increased counts: 14 light, 32 dark */
+        for (let i = 0; i < count; i++) {
           const isWhite = Math.random() > 0.65;
           sparkles.push({
             x: W * (0.12 + Math.random() * 0.76),
@@ -56,10 +58,14 @@
             r: isWhite ? 255 : 170 + (Math.random() * 50 | 0),
             g: isWhite ? 255 : 10 + (Math.random() * 20 | 0),
             b: isWhite ? 255 : 10 + (Math.random() * 20 | 0),
-            glow: isWhite ? 1.0 : 0.6
+            glow: isWhite ? 1.0 : 0.6,
+            isWhite: isWhite
           });
         }
       }
+
+      // Expose buildSparkles globally so theme switcher can rebuild with correct count
+      window.buildSparkles = buildSparkles;
 
       const hero = canvas.parentElement;
 
@@ -98,12 +104,60 @@
         gc.putImageData(img, 0, 0);
       }
 
-      function drawRings() {
+      let shootingStars = [];
+
+      function drawShootingStars(ts, isLight) {
+        if (!isLight) return;
+        
+        if (Math.random() < 0.03) {
+          shootingStars.push({
+            x: Math.random() * W,
+            y: Math.random() * -100,
+            len: 40 + Math.random() * 60,
+            speed: 15 + Math.random() * 15,
+            angle: Math.PI / 4 + (Math.random() - 0.5) * 0.1,
+            alpha: 0
+          });
+        }
+
+        ctx.save();
+        ctx.globalCompositeOperation = 'source-over';
+        for (let i = shootingStars.length - 1; i >= 0; i--) {
+          let s = shootingStars[i];
+          s.x -= Math.cos(s.angle) * s.speed;
+          s.y += Math.sin(s.angle) * s.speed;
+
+          if (s.alpha < 1) s.alpha += 0.05;
+
+          const grad = ctx.createLinearGradient(
+            s.x, s.y,
+            s.x + Math.cos(s.angle) * s.len,
+            s.y - Math.sin(s.angle) * s.len
+          );
+          grad.addColorStop(0, `rgba(152, 103, 197, ${s.alpha * 0.9})`);
+          grad.addColorStop(1, 'rgba(152, 103, 197, 0)');
+
+          ctx.beginPath();
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 2.5;
+          ctx.lineCap = 'round';
+          ctx.moveTo(s.x, s.y);
+          ctx.lineTo(s.x + Math.cos(s.angle) * s.len, s.y - Math.sin(s.angle) * s.len);
+          ctx.stroke();
+
+          if (s.x < -200 || s.y > H + 200) {
+            shootingStars.splice(i, 1);
+          }
+        }
+        ctx.restore();
+      }
+
+      function drawRings(isLight) {
         rc.clearRect(0, 0, W, H);
         rings.forEach(({ cx, cy, r }) => {
           rc.beginPath();
           rc.arc(cx, cy, r, 0, Math.PI * 2);
-          rc.strokeStyle = 'rgba(255,255,255,1)';
+          rc.strokeStyle = isLight ? 'rgba(157, 9, 23, 0.25)' : 'rgba(255,255,255,1)';
           rc.lineWidth = 1.2;
           rc.stroke();
         });
@@ -128,7 +182,9 @@
         });
       }
 
+
       function drawSparkles(ts) {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
         sparkles.forEach(s => {
           s.x += s.vx; s.y += s.vy;
           if (s.y < -10) { s.y = H * 0.66; s.x = W * (0.12 + Math.random() * 0.76); }
@@ -140,11 +196,17 @@
           const al = tw * 0.85 * (s.glow || 0.6);
 
           ctx.save();
-          ctx.globalCompositeOperation = 'screen';
+          ctx.globalCompositeOperation = isLight ? 'source-over' : 'screen';
 
           const haloSize = sz * (s.isWhite ? 6 : 4);
           const halo = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, haloSize);
-          const r = s.r, g = s.g, b = s.b;
+          
+          let r = s.r, g = s.g, b = s.b;
+          if (isLight && s.isWhite) {
+            // Purple for white sparkles in light mode
+            r = 152; g = 103; b = 197;
+          }
+
           halo.addColorStop(0, `rgba(${r},${g},${b},${+(al * 0.55).toFixed(3)})`);
           halo.addColorStop(0.4, `rgba(${r},${g},${b},${+(al * 0.18).toFixed(3)})`);
           halo.addColorStop(1, `rgba(${r},${g},${b},0)`);
@@ -154,14 +216,19 @@
           ctx.fill();
 
           ctx.globalAlpha = al;
-          ctx.fillStyle = s.isWhite ? '#fff' : `rgb(${r},${Math.min(255, g + 80)},${b + 20})`;
+          if (isLight && s.isWhite) {
+            ctx.fillStyle = '#9867C5';
+          } else {
+            ctx.fillStyle = s.isWhite ? '#fff' : `rgb(${r},${Math.min(255, g + 80)},${b + 20})`;
+          }
+
           ctx.beginPath();
           ctx.arc(s.x, s.y, sz * 0.9, 0, Math.PI * 2);
           ctx.fill();
 
           if (sz > 1.6) {
             ctx.globalAlpha = al * 0.55;
-            ctx.strokeStyle = `rgba(255,160,40,${al * 0.45})`;
+            ctx.strokeStyle = isLight ? `rgba(152,103,197,${al * 0.45})` : `rgba(255,160,40,${al * 0.45})`;
             ctx.lineWidth = 0.6;
             const arm = sz * 4.5;
             ctx.beginPath();
@@ -200,18 +267,19 @@
           o._pulse = pulse;
         });
 
-        ctx.fillStyle = '#050505';
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        ctx.fillStyle = isLight ? '#fcfcfc' : '#050505';
         ctx.fillRect(0, 0, W, H);
 
         ctx.save();
-        ctx.globalAlpha = 0.030;
+        ctx.globalAlpha = isLight ? 0.08 : 0.030;
         rings.forEach(({ cx, cy, r }) => {
           ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2);
-          ctx.strokeStyle = '#fff'; ctx.lineWidth = 1; ctx.stroke();
+          ctx.strokeStyle = isLight ? 'rgba(157, 9, 23, 0.4)' : '#fff'; ctx.lineWidth = 1; ctx.stroke();
         });
         ctx.restore();
 
-        drawRings();
+        drawRings(isLight);
 
         mc.clearRect(0, 0, W, H);
         mc.save();
@@ -247,39 +315,42 @@
         rc.restore();
 
         ctx.save();
-        ctx.globalCompositeOperation = 'screen';
-        ctx.globalAlpha = 0.88;
+        ctx.globalCompositeOperation = isLight ? 'source-over' : 'screen';
+        ctx.globalAlpha = isLight ? 0.95 : 0.88;
         ctx.drawImage(ringC, 0, 0);
         ctx.restore();
 
-        orbs.forEach((o, i) => {
-          ctx.save();
-          ctx.globalCompositeOperation = 'screen';
+        if (!isLight) {
+          orbs.forEach((o, i) => {
+            ctx.save();
+            ctx.globalCompositeOperation = 'screen';
 
-          const dist = Math.hypot(o.cx - mouseX, o.cy - mouseY);
-          const strength = Math.max(0, 1 - dist / 380);
-          const reaction = 1.0 + Math.pow(strength, 2.5) * 2.2;
-          const pulseReaction = o._pulse * (0.8 + 0.2 * reaction);
+            const dist = Math.hypot(o.cx - mouseX, o.cy - mouseY);
+            const strength = Math.max(0, 1 - dist / 380);
+            const reaction = 1.0 + Math.pow(strength, 2.5) * 2.2;
+            const pulseReaction = o._pulse * (0.8 + 0.2 * reaction);
 
-          ctx.translate(o.cx, o.cy);
-          ctx.scale(1, (o.rY / o.radius) * pulseReaction);
-          const c = ORB_COLORS[i % ORB_COLORS.length];
+            ctx.translate(o.cx, o.cy);
+            ctx.scale(1, (o.rY / o.radius) * pulseReaction);
+            const c = ORB_COLORS[i % ORB_COLORS.length];
 
-          const dynamicRadius = o.radius * pulseReaction;
-          const g = ctx.createRadialGradient(0, 0, 0, 0, 0, dynamicRadius);
+            const dynamicRadius = o.radius * pulseReaction;
+            const g = ctx.createRadialGradient(0, 0, 0, 0, 0, dynamicRadius);
 
-          const alphaBoost = 0.40 + 0.60 * (Math.pow(strength, 2));
-          g.addColorStop(0.00, c[0].replace(/[\d\.]+\)$/, `${Math.min(1, alphaBoost * 1.2)})`));
-          g.addColorStop(0.35, c[1]);
-          g.addColorStop(1.00, c[2]);
+            const alphaBoost = 0.40 + 0.60 * (Math.pow(strength, 2));
+            g.addColorStop(0.00, c[0].replace(/[\d\.]+\)$/, `${Math.min(1, alphaBoost * 1.2)})`));
+            g.addColorStop(0.35, c[1]);
+            g.addColorStop(1.00, c[2]);
 
-          ctx.fillStyle = g;
-          ctx.beginPath();
-          ctx.arc(0, 0, dynamicRadius, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.restore();
-        });
+            ctx.fillStyle = g;
+            ctx.beginPath();
+            ctx.arc(0, 0, dynamicRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+          });
+        }
 
+        drawShootingStars(ts, isLight);
         drawSparkles(ts);
 
         if (frame % 3 === 0) generateGrain();
@@ -407,58 +478,22 @@
     })();
 
     (function () {
-      'use strict';
+      const switcher = document.getElementById('themeSwitch');
+      const html = document.documentElement;
 
-      const heroSection = document.querySelector('.hero-section');
-      const dot = document.getElementById('cur-dot');
-      const ring = document.getElementById('cur-ring');
+      // Check for saved theme
+      const currentTheme = localStorage.getItem('dmg-theme') || 'dark';
+      html.setAttribute('data-theme', currentTheme);
 
-      let mouseX = 0, mouseY = 0;
-      let ringX = 0, ringY = 0;
-      let visible = false;
-
-      document.addEventListener('mousemove', e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        dot.style.left = mouseX + 'px';
-        dot.style.top = mouseY + 'px';
-      });
-
-      heroSection.addEventListener('mouseenter', () => {
-        visible = true;
-        dot.style.opacity = '1';
-        ring.style.opacity = '1';
-        ringX = mouseX;
-        ringY = mouseY;
-      });
-      heroSection.addEventListener('mouseleave', () => {
-        visible = false;
-        dot.style.opacity = '0';
-        ring.style.opacity = '0';
-      });
-
-      heroSection.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          ring.style.width = '26px';
-          ring.style.height = '26px';
-          ring.style.background = 'radial-gradient(circle, rgba(157,9,23,0.30) 0%, rgba(157,9,23,0.08) 55%, rgba(0,0,0,0) 100%)';
-          ring.style.borderColor = 'rgba(157,9,23,0.55)';
+      if (switcher) {
+        switcher.addEventListener('click', () => {
+          const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          html.setAttribute('data-theme', newTheme);
+          localStorage.setItem('dmg-theme', newTheme);
+          // Rebuild sparkles so dark gets full 20, light gets fewer 8
+          if (typeof window.buildSparkles === 'function') window.buildSparkles();
         });
-        el.addEventListener('mouseleave', () => {
-          ring.style.width = '44px';
-          ring.style.height = '44px';
-          ring.style.background = '';
-          ring.style.borderColor = '';
-        });
-      });
-
-      function animateRing() {
-        ringX += (mouseX - ringX) * 0.10;
-        ringY += (mouseY - ringY) * 0.10;
-        ring.style.left = ringX + 'px';
-        ring.style.top = ringY + 'px';
-        requestAnimationFrame(animateRing);
       }
-      animateRing();
-
     })();
+
+

@@ -758,93 +758,9 @@
         font-weight: 300;
       }
 
-      /* Premium Custom Cursor Styling */
-      #cur-dot,
-      #cur-ring {
-        position: fixed;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        z-index: 9999;
-        transition: opacity 0.3s ease, border 0.3s ease, background 0.3s ease, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        opacity: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
 
-      #cur-dot {
-        width: 8px;
-        height: 8px;
-        background: #9D0917;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-      }
+      /* Premium Custom Cursor Styling - Consolidanted into style.css Master system */
 
-      #cur-ring {
-        width: 44px;
-        height: 44px;
-        border: 1.5px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        background: transparent;
-      }
-
-      #cur-text {
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        line-height: 1.1;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-        text-align: left;
-      }
-
-      #cur-text .small {
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-
-      #cur-text .big {
-        font-size: 18px;
-        font-weight: 900;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-      }
-
-      #cur-icon {
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        color: #fff;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        width: 38px;
-        height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Hover Expand State - Transforms from Circle to Pill */
-      #cur-ring.cur-expand {
-        width: 250px;
-        height: 70px;
-        background: rgba(10, 15, 22, 0.95);
-        /* Deep high-end dark teal/black */
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        backdrop-filter: blur(12px);
-        border-radius: 100px;
-        padding: 0 25px 0 32px;
-        justify-content: space-between !important;
-      }
-
-      #cur-ring.cur-expand #cur-text,
-      #cur-ring.cur-expand #cur-icon {
-        opacity: 1;
-      }
 
       /* =========================================
          SUCCESS STORIES NAVIGATION (Restored)
@@ -2268,6 +2184,10 @@
         border-radius: 2px;
         transition: all 0.3s ease;
       }
+      /* Dark hamburger for light theme visibility */
+      [data-theme='light'] .hamburger span {
+        background: #000 !important;
+      }
 
       .mobile-menu-overlay {
         position: fixed;
@@ -2457,7 +2377,11 @@
       body.menu-open {
         overflow: hidden !important;
       }
-
+      .gc-user{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
       /* =========================================
          PORTRAIT TABLET (768px - 1024px)
          ========================================= */
@@ -2589,7 +2513,7 @@
 
         .gc-heading {
           font-size: 48px !important;
-          text-align: center !important;
+          text-align: left !important;
           margin-bottom: 40px !important;
         }
 
@@ -3063,7 +2987,7 @@
 
         .gc-heading {
           font-size: 32px !important;
-          text-align: center !important;
+          text-align: left !important;
           line-height: 1.1 !important;
           margin-bottom: 30px !important;
         }
@@ -3492,7 +3416,7 @@
           width: 98% !important;
           max-width: 100% !important;
           border-radius: 4px !important;
-          padding: 8px 14px !important;
+          padding: 12px 14px !important;
           display: flex !important;
           align-items: center !important;
           justify-content: space-between !important;
