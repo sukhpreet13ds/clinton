@@ -41,14 +41,15 @@ body {
 
 .navbar {
     padding: 24px 40px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    perspective: 1200px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2000;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    perspective: 1200px !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 2000 !important;
 }
 
 .nav-container {
@@ -437,12 +438,14 @@ body.reveal-site .nav-links li:nth-child(5) {
 
 
 /* PREMIUM CUSTOM CURSOR SYSTEM */
-#cur-dot, #cur-ring {
+#cur-dot,
+#cur-ring {
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 100000 !important; /* Above everything */
+    z-index: 100000 !important;
+    /* Above everything */
     transition: opacity 0.3s ease, border 0.3s ease, background 0.4s ease, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), width 0.4s cubic-bezier(0.19, 1, 0.22, 1), height 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     opacity: 0;
     display: flex;
@@ -526,7 +529,7 @@ body.reveal-site .nav-links li:nth-child(5) {
     display: flex !important;
 }
 
-#cur-ring.cur-expand #cur-text > * {
+#cur-ring.cur-expand #cur-text>* {
     opacity: 1 !important;
     visibility: visible !important;
 }
@@ -1154,7 +1157,7 @@ body.reveal-site .contact-btn {
     padding: 40px 0;
     overflow: hidden;
     display: flex;
-    
+
 }
 
 .marquee-track {
@@ -1319,5 +1322,4 @@ body.reveal-site .second-hero-content {
     position: relative;
     z-index: 1;
 }
-
 

@@ -392,11 +392,13 @@
         (function () {
             'use strict';
             const words = ['AD AGENCY', 'SOCIAL MEDIA', 'PRINT MARKETING', 'VIDEO PRODUCTION', 'WEBSITE DESIGN'];
-            const track = document.getElementById('wordTrack');
+            const track = document.getElementById('wordTrack') || document.getElementById('wordTrack1');
+            if (!track) return;
             let idx = 0;
 
             function cycle() {
                 if (!document.body.classList.contains('reveal-site')) return;
+                if (!track) return;
                 track.classList.add('flipping');
                 setTimeout(() => {
                     idx = (idx + 1) % words.length;
@@ -417,6 +419,7 @@
             let idx = 0;
 
             function cycleGC() {
+                if (!track) return;
                 track.classList.add('flipping');
                 setTimeout(() => {
                     idx = (idx + 1) % words.length;
