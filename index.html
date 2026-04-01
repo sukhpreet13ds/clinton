@@ -13,6 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 </head>
 
 <body class="preloader-active">
@@ -25,7 +27,7 @@
     </div>
 
     <!-- Light Theme Background Floating SVGs -->
-    <div class="light-theme-bg-shapes">
+    <!-- <div class="light-theme-bg-shapes">
         <svg class="float-shape shape-1" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56.665 56.665" xml:space="preserve">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -124,7 +126,7 @@
                 </path>
             </g>
         </svg>
-    </div>
+    </div> -->
 
     <nav class="navbar">
 
@@ -210,8 +212,9 @@
                             <span class="mega-title">RINGS HERO PAGE</span>
                         </div>
                     </a>
-                    <!-- Item 2 -->
-                    <div class="mega-item">
+                   <!-- Item 2 -->
+                      <div class="mega-item">
+                        <a href="index3.html" style="text-decoration: none;">
                         <div class="img-wrapper">
                             <div class="mega-img" style="background-image: url('assets/mega2.jpeg');"></div>
                             <div class="hover-icon">
@@ -222,7 +225,8 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="mega-title">Digital Marketing</span>
+                        <span class="mega-title">Milky Way</span>
+                    </a>
                     </div>
                     <!-- Item 3 -->
                     <div class="mega-item">
@@ -454,7 +458,7 @@
                 </div>
                 <div class="dropdown-content">
                     <a href="index2.html">BLACK SHADE PAGE <i class="bi bi-arrow-up-right child-arrow"></i></a>
-                    <a href="#">TRADITIONAL MEDIA <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="index3.html">TRADITIONAL MEDIA <i class="bi bi-arrow-up-right child-arrow"></i></a>
                     <a href="#">DIGITAL MARKETING <i class="bi bi-arrow-up-right child-arrow"></i></a>
                     <a href="#">SMM <i class="bi bi-arrow-up-right child-arrow"></i></a>
                     <a href="#">VIDEO PRODUCTION <i class="bi bi-arrow-up-right child-arrow"></i></a>
@@ -497,9 +501,7 @@
 
 
     <section class="hero-section">
-
         <canvas id="hero-canvas"></canvas>
-
         <div class="hero-content">
 
             <h1 class="hero-heading">
@@ -552,6 +554,7 @@
                 </div>
             </div>
         </div>
+        <div id="globe-container"></div>
     </section>
     <main class="main-content">
         <div class="second-hero-scroll-content">
@@ -1593,6 +1596,8 @@
             </svg>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script/earth.js"></script>
     <script src="script/script.js"></script>
     <script src="script/mix.js"></script>
     <script src="script/index2.js"></script>

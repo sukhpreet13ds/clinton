@@ -96,13 +96,12 @@
         inset: 0;
         width: 100% !important;
         height: 100% !important;
-        z-index: -1 !important;
+        z-index: -2 !important;
         pointer-events: none;
       }
 
       section,
       .brands-marquee,
-      main,
       .hero-section {
         background: transparent !important;
       }
@@ -112,6 +111,36 @@
         /* Centered as requested */
         padding-left: 0;
         text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #globe-container {
+        position: fixed;
+        bottom: -790px !important;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        height: 1250px;
+        z-index: -1;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        will-change: opacity;
+      }
+
+      body.reveal-site #globe-container {
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        #globe-container {
+          height: 750px !important;
+          bottom: -500px !important;
+        }
       }
 
       .hero-section .hero-content {
@@ -490,7 +519,7 @@
         text-align: left;
       }
 
-      .main-content {
+      /* .main-content {
         position: relative;
       }
 
@@ -506,7 +535,7 @@
         pointer-events: none;
         mask: linear-gradient(to bottom, transparent 0%, black 15%);
         -webkit-mask: linear-gradient(to bottom, transparent 0%, black 15%);
-      }
+      } */
 
       /* Scroll Animation Utilities */
       .reveal-left {
@@ -4317,7 +4346,7 @@
       [data-theme='light'] .go-to-top-text,
       [data-theme='light'] .u-name,
       [data-theme='light'] .gc-quote,
-      [data-theme='light'] .modal-subtitle  {
+      [data-theme='light'] .modal-subtitle {
         color: #1a1a1a !important;
       }
 
@@ -4711,15 +4740,36 @@
         border-radius: 50%;
       }
 
-      .benefits-list li:nth-child(1) { animation-delay: 0.2s; }
-      .benefits-list li:nth-child(2) { animation-delay: 0.3s; }
-      .benefits-list li:nth-child(3) { animation-delay: 0.4s; }
-      .benefits-list li:nth-child(4) { animation-delay: 0.5s; }
-      .benefits-list li:nth-child(5) { animation-delay: 0.6s; }
+      .benefits-list li:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+
+      .benefits-list li:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      .benefits-list li:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      .benefits-list li:nth-child(4) {
+        animation-delay: 0.5s;
+      }
+
+      .benefits-list li:nth-child(5) {
+        animation-delay: 0.6s;
+      }
 
       @keyframes bulletSlide {
-        from { opacity: 0; transform: translateX(-20px); }
-        to { opacity: 1; transform: translateX(0); }
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
 
       /* Form Side */
@@ -4807,9 +4857,10 @@
         transform: translateY(-4px);
         box-shadow: 0 15px 35px rgba(157, 9, 23, 0.4) !important;
       }
-.modal{
-    --bs-modal-bg: transparent !important;
-}
+
+      .modal {
+        --bs-modal-bg: transparent !important;
+      }
 
 
       /* Responsive */
@@ -4836,7 +4887,8 @@
         .modal-main-title {
           font-size: 28px;
         }
-        .field-input{
-            margin-bottom: 8px !important;
+
+        .field-input {
+          margin-bottom: 8px !important;
         }
       }

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dillon - Media Group</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/galaxy.css">
+    <!-- <link rel="stylesheet" href="style/index2.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+</head>
+
+<body class="preloader-active">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
+
+    <div id="preloader">
+        <img src="assets/logo.png" id="preloader-logo" alt="DMG Logo">
+        <div class="preloader-blob"></div>
+    </div>
+
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Dillon Media Group">
+            </a>
+
+            <ul class="nav-links mb-0">
+                <li class="has-mega">
+                    <a href="#">OUR SERVICES</a>
+                </li>
+                <li class="has-about-mega"><a href="#">ABOUT US</a></li>
+
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT US</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-wrapper">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                    <button class="icon-btn search-toggle" id="searchToggle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+
+
+                <div class="theme-switch-wrapper">
+                    <button class="theme-switch-btn" id="themeSwitch" aria-label="Toggle Light/Dark Theme">
+                        <i class="bi bi-moon-stars"></i>
+                        <i class="bi bi-sun"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="mobile-toggle" id="mobileToggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <a href="#" class="contact-btn btn-animated">
+                    <span class="arrow-icon arr-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </span>
+                    <span class="text">Contact Us</span>
+                    <span class="circle"></span>
+                    <span class="arrow-icon arr-1">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+            <div class="mega-panel">
+                <div class="mega-grid">
+                    <!-- Item 1 -->
+                    <a href="index2.html" style="text-decoration: none;">
+
+                        <div class="mega-item">
+                            <div class="img-wrapper">
+                                <div class="mega-img" style="background-image: url('assets/rings.jpg');"></div>
+                                <div class="hover-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="mega-title">RINGS HERO PAGE</span>
+                        </div>
+                    </a>
+                    <!-- Item 2 -->
+                     <a href="index3.html" style="text-decoration: none;"></a>
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega2.jpeg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Milky Way</span>
+                    </div>
+                    </a>
+                    <!-- Item 3 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega3.jpeg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">SOCIAL MEDIA MANAGEMENT</span>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega4.webp');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">VIDEO PRODUCTION</span>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega1.jpg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">WEBSITE DESIGN</span>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega6.jpg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">PRINT MARKETING</span>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega7.jpg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">Charlie Croker MUA</span>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega8.jpg');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">AUGUST & PIERS</span>
+                    </div>
+                    <!-- Item 9 -->
+                    <div class="mega-item">
+                        <div class="img-wrapper">
+                            <div class="mega-img" style="background-image: url('assets/mega9.avif');"></div>
+                            <div class="hover-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="mega-title">RINGS HERO PAGE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-mega-panel">
+                <div class="about-mega-grid">
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">Web Design</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">Web Development</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">Branding</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">SEO</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">PPC Advertising</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">Shopify</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">Digital Marketing</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">UX Auditing</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">E-Commerce</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                    <a href="#" class="about-mega-item">
+                        <span class="item-text">AI Variant Testing</span>
+                        <span class="item-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <img src="assets/logo.png" alt="logo">
+            </div>
+            <div class="mobile-close" id="mobileClose">
+                <div class="close-pill">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-links">
+            <div class="mobile-link-item"><a href="index.html">HOME</a></div>
+            <div class="mobile-link-item has-dropdown">
+                <div class="dropdown-trigger" id="servicesTrigger">
+                    <span>OUR SERVICES</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="index2.html">BLACK SHADE PAGE <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">TRADITIONAL MEDIA <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">DIGITAL MARKETING <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">SMM <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">VIDEO PRODUCTION <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">WEBSITE DESIGN <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                </div>
+            </div>
+            <div class="mobile-link-item has-dropdown">
+                <div class="dropdown-trigger" id="aboutUsTrigger">
+                    <span>ABOUT US</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">Web Design <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">WEB DEVELOPMENT <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">BRANDING <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">SEO <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">PPC ADVERTISING <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">SHOPIFY <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">DIGITAL MARKETING <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">UX AUDITING <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">E-COMMERCE <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                    <a href="#">AI VARIANT TESTING <i class="bi bi-arrow-up-right child-arrow"></i></a>
+                </div>
+            </div>
+            <div class="mobile-link-item"><a href="#">BLOGS</a></div>
+            <div class="mobile-link-item"><a href="#">CONTACT US</a></div>
+
+            <a href="#" class="mobile-contact-btn">HIRE US NOW</a>
+        </div>
+
+        <div class="mobile-footer">
+            <div class="mobile-video-wrap">
+                <iframe src="https://player.vimeo.com/video/662073747?h=7eaada5a82&autoplay=1&loop=1&background=1"
+                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="mobile-footer-text">Dillon Media Group.</p>
+        </div>
+    </div>
+
+
+
+    <section class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+
+            <h1 class="hero-heading">
+                <span class="shine-text">FULL-SERVICE</span><br>
+                <span class="word-cycler1"><span id="wordTrack1" class="word-track1">AD AGENCY</span></span>
+            </h1>
+            <p class="hero-subtext">At Dillon Media Group, we believe that if the path is truly beautiful, we should
+                not stop to ask where it exactly leads. Our business philosophy is centered around a very simple
+                principle: our religion is absolute kindness and relentless innovation. Each of us possesses within
+                our reach the unique power to disrupt industries.</p>
+            <div class="hero-actions">
+                <a href="#" class="hero-cta btn-animated" data-bs-toggle="modal" data-bs-target="#ModalTogglesix">
+                    <span class="arrow-icon arr-2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </span>
+                    <span class="text">Start your project</span>
+                    <span class="circle"></span>
+                    <span class="arrow-icon arr-1">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </span>
+                </a>
+                <div class="hero-rating">
+                    <div class="rating-top">
+                        <span class="rating-score">4.9</span>
+                        <span class="rating-label">from <span id="reviewCounter">0</span>+ reviews</span>
+                    </div>
+                    <div class="rating-bottom">
+                        <svg width="18" height="18" viewBox="0 0 48 48">
+                            <path fill="#EA4335"
+                                d="M24 9.5c3.5 0 6.6 1.2 9.1 3.2l6.8-6.8C35.8 2.4 30.3 0 24 0 14.7 0 6.7 5.4 2.7 13.3l7.9 6.2C12.5 13.1 17.8 9.5 24 9.5z" />
+                            <path fill="#34A853"
+                                d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4 7.1-10 7.1-17z" />
+                            <path fill="#FBBC05"
+                                d="M10.6 28.5c-.6-1.6-.9-3.3-.9-5s.3-3.4.9-5L2.7 12.3C1 15.5 0 19.1 0 23s1 7.5 2.7 10.7l7.9-5.2z" />
+                            <path fill="#4285F4"
+                                d="M24 46c6.3 0 11.6-2.1 15.5-5.6l-7.5-5.8c-2.1 1.4-4.8 2.3-7.9 2.3-6.2 0-11.5-3.6-13.4-8.9l-7.9 5.7C6.7 41.6 14.7 46 24 46z" />
+                        </svg>
+                        <div class="stars" id="starsContainer">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <canvas id="bg-canvas"></canvas>
+    </section>
+    <main class="main-content">
+        <div class="second-hero-scroll-content">
+            <section class="brands-marquee">
+                <div class="marquee-track">
+                    <div class="brand"><img src="assets/s-brand.png" alt="Brand 1"></div>
+                    <div class="brand"><img src="assets/s-brand4.png" alt="Brand 4"></div>
+                    <div class="brand"><img src="assets/s-brand2.png" alt="Brand 2"></div>
+                    <div class="brand"><img src="assets/s-brand3.png" alt="Brand 3"></div>
+                    <div class="brand"><img src="assets/s-brand5.png" alt="Brand 5"></div>
+                    <div class="brand"><img src="assets/s-brand6.png" alt="Brand 6"></div>
+                    <div class="brand"><img src="assets/brand7.png" alt="Brand 8"></div>
+                    <div class="brand"><img src="assets/brand8.png" alt="Brand 9"></div>
+                    <div class="brand"><img src="assets/brand9.png" alt="Brand 10"></div>
+                    <div class="brand"><img src="assets/brand10.png" alt="Brand 11"></div>
+                    <div class="brand"><img src="assets/brand11.png" alt="Brand 12"></div>
+                </div>
+                <div class="marquee-track" aria-hidden="true">
+                    <div class="brand"><img src="assets/s-brand2.png" alt="Brand 2"></div>
+                    <div class="brand"><img src="assets/s-brand3.png" alt="Brand 3"></div>
+                    <div class="brand"><img src="assets/s-brand4.png" alt="Brand 4"></div>
+                    <div class="brand"><img src="assets/s-brand5.png" alt="Brand 5"></div>
+                    <div class="brand"><img src="assets/s-brand.png" alt="Brand 1"></div>
+                    <div class="brand"><img src="assets/s-brand6.png" alt="Brand 6"></div>
+                    <div class="brand"><img src="assets/brand7.png" alt="Brand 8"></div>
+                    <div class="brand"><img src="assets/brand8.png" alt="Brand 9"></div>
+                    <div class="brand"><img src="assets/brand9.png" alt="Brand 10"></div>
+                    <div class="brand"><img src="assets/brand10.png" alt="Brand 11"></div>
+                    <div class="brand"><img src="assets/brand11.png" alt="Brand 12"></div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+
+    </main>
+    <div id="cur-dot"></div>
+    <div id="cur-ring">
+        <div id="cur-text">
+            <span class="small">CHECK OUT</span>
+            <span class="big">THE SERVICES</span>
+        </div>
+        <div id="cur-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="module" src="script/galaxy.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/mix.js"></script>
+    <script src="script/index2.js"></script>
+
+    <script>
+        /* Pure JS Scroll Reveal Logic */
+        (function () {
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active-scroll');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-zoom, .reveal-down');
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // Continuous Looping Sauce Statistics Animation
+            const animateSauce = (num) => {
+                const target = parseInt(num.getAttribute('data-target'));
+                let current = 0;
+                const duration = 2000;
+                const increment = target / (duration / 20);
+
+                const updateValue = () => {
+                    current += increment;
+                    if (current < target) {
+                        num.textContent = Math.round(current);
+                        setTimeout(updateValue, 20);
+                    } else {
+                        num.textContent = target;
+                        // Wait 1 second then reset and restart
+                        setTimeout(() => {
+                            num.textContent = "0";
+                            animateSauce(num);
+                        }, 1000);
+                    }
+                };
+                updateValue();
+            };
+
+            const sauceCounterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const numbers = entry.target.querySelectorAll('.stat-number');
+                        numbers.forEach(num => animateSauce(num));
+                        sauceCounterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            const sauceGrid = document.querySelector('.sauce-grid');
+            if (sauceGrid) sauceCounterObserver.observe(sauceGrid);
+        })();
+    </script>
+
+    <script>
+        /* Infinite Carousel Logic */
+        (function () {
+            const track = document.getElementById('storiesTrack');
+            const originalSlides = Array.from(track.children);
+            const nextBtn = document.getElementById('nextStory');
+            const prevBtn = document.getElementById('prevStory');
+
+            // Clone first and last slides for infinite loop
+            const firstClone = originalSlides[0].cloneNode(true);
+            const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+
+            track.appendChild(firstClone);
+            track.insertBefore(lastClone, originalSlides[0]);
+
+            const allSlides = Array.from(track.children);
+            let currentIdx = 1; // Start at first original slide
+            let isTransitioning = false;
+
+            function updateCarousel(transition = true) {
+                if (!transition) track.style.transition = 'none';
+                else track.style.transition = 'transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1)';
+
+                // Get current slide width (desktop 75%, mobile 90% handled by CSS variable or just check window)
+                const isMobile = window.innerWidth <= 1024;
+                const sw = isMobile ? 90 : 75;
+                const offset = (100 - sw) / 2 - (currentIdx * sw);
+
+                track.style.transform = `translateX(${offset}%)`;
+
+                allSlides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === currentIdx) slide.classList.add('active');
+                });
+
+                if (!transition) {
+                    // Force reflow
+                    track.offsetHeight;
+                }
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIdx++;
+                updateCarousel();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIdx--;
+                updateCarousel();
+            });
+
+            track.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                if (currentIdx === allSlides.length - 1) {
+                    currentIdx = 1;
+                    updateCarousel(false);
+                }
+                if (currentIdx === 0) {
+                    currentIdx = allSlides.length - 2;
+                    updateCarousel(false);
+                }
+            });
+
+            // Set initial position
+            updateCarousel(false);
+        })();
+
+        /* Game Changers Carousel Logic */
+        (function () {
+            const slides = document.querySelectorAll('.gc-slide');
+            const nextBtn = document.getElementById('nextGC');
+            const prevBtn = document.getElementById('prevGC');
+            if (!nextBtn || !prevBtn || !slides.length) return;
+            let currentIdx = 0;
+
+            function updateGC() {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === currentIdx) slide.classList.add('active');
+                });
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIdx = (currentIdx + 1) % slides.length;
+                updateGC();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIdx = (currentIdx - 1 + slides.length) % slides.length;
+                updateGC();
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            'use strict';
+            const words = ['AD AGENCY', 'SOCIAL MEDIA', 'PRINT MARKETING', 'VIDEO PRODUCTION', 'WEBSITE DESIGN'];
+            const track = document.getElementById('wordTrack') || document.getElementById('wordTrack1');
+            if (!track) return;
+            let idx = 0;
+
+            function cycle() {
+                if (!document.body.classList.contains('reveal-site')) return;
+                if (!track) return;
+                track.classList.add('flipping');
+                setTimeout(() => {
+                    idx = (idx + 1) % words.length;
+                    track.textContent = words[idx];
+                    track.classList.remove('flipping');
+                    track.classList.add('enter-3d');
+                    setTimeout(() => track.classList.remove('enter-3d'), 800);
+                }, 500);
+            }
+            setInterval(cycle, 3200);
+        })();
+    </script>
+    <script>
+        (function () {
+            'use strict';
+            const words = ['SPEAK!', 'GROWTH!', 'INTELLIGENCE!', 'PROFESSIONAL!'];
+            const track = document.getElementById('gcWordTrack');
+            if (!track) return;
+            let idx = 0;
+
+            function cycleGC() {
+                track.classList.add('flipping');
+                setTimeout(() => {
+                    idx = (idx + 1) % words.length;
+                    track.textContent = words[idx];
+                    track.classList.remove('flipping');
+                    track.classList.add('enter-3d');
+                    setTimeout(() => track.classList.remove('enter-3d'), 850);
+                }, 500);
+            }
+            setInterval(cycleGC, 3800);
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const pl = document.getElementById('preloader');
+            const logo = document.getElementById('preloader-logo');
+
+            setTimeout(() => logo.classList.add('show'), 400);
+
+            setTimeout(() => {
+                pl.classList.add('exit');
+                document.body.classList.remove('preloader-active');
+                document.body.classList.add('reveal-site');
+                setTimeout(startPageReveal, 600);
+            }, 2000);
+
+            function startPageReveal() {
+                const heading = document.querySelector('.second-hero-heading');
+                if (heading) setTimeout(() => heading.classList.add('revealed'), 300);
+
+                const starContainer = document.getElementById('starsContainer');
+                if (starContainer) {
+                    const starSpans = starContainer.querySelectorAll('span');
+                    starSpans.forEach((s, i) => {
+                        setTimeout(() => s.classList.add('fly-in'), 1200 + (i * 120));
+                    });
+                }
+
+                const counterEl = document.getElementById('reviewCounter');
+                if (counterEl) {
+                    function runCounter() {
+                        const startTime = performance.now();
+                        function update(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / 2200, 1);
+                            counterEl.textContent = Math.floor(progress * 107);
+                            if (progress < 1) requestAnimationFrame(update);
+                            else setTimeout(runCounter, 3500);
+                        }
+                        requestAnimationFrame(update);
+                    }
+                    setTimeout(runCounter, 1800);
+                }
+            }
+            window.addEventListener('scroll', () => {
+                const nav = document.querySelector('.navbar');
+                if (window.scrollY > 300) {
+                    nav.classList.add('is-sticky');
+                } else {
+                    nav.classList.remove('is-sticky');
+                }
+            });
+        })();
+    </script>
+    <!-- Custom Cursor Script removed duplicates -->
+
+    <!-- <script>
+    (function() {
+      const vantaEffect = VANTA.NET({
+        el: "#vanta-hero-bg",
+          mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0x1e1e1e,
+  backgroundColor: 0x0,
+  points: 17.00,
+  maxDistance: 24.00
+      });
+
+      window.addEventListener('beforeunload', () => {
+        if (vantaEffect) vantaEffect.destroy();
+      });
+    })();
+    </script> -->
+    <script>
+        (function () {
+            const toggle = document.getElementById('mobileToggle');
+            const menu = document.getElementById('mobileMenu');
+            const close = document.getElementById('mobileClose');
+            const triggers = document.querySelectorAll('#servicesTrigger, #aboutUsTrigger');
+            const mobileVids = document.querySelectorAll('.mobile-video-wrap video');
+
+            if (toggle && menu && close) {
+                toggle.addEventListener('click', () => {
+                    menu.classList.add('active');
+                    document.body.classList.add('menu-open');
+                });
+
+                close.addEventListener('click', () => {
+                    menu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                });
+            }
+
+            if (triggers.length) {
+                triggers.forEach(trigger => {
+                    trigger.addEventListener('click', () => {
+                        trigger.parentElement.classList.toggle('active');
+                    });
+                });
+            }
+
+            // Mobile search expand/collapse
+            const searchToggleBtn = document.getElementById('searchToggle');
+            const searchInputEl = document.getElementById('searchInput');
+            const navContainerEl = document.querySelector('.nav-container');
+
+            if (searchToggleBtn && navContainerEl) {
+                searchToggleBtn.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1366) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const isActive = navContainerEl.classList.toggle('search-active');
+                        if (isActive) {
+                            setTimeout(() => searchInputEl && searchInputEl.focus(), 60);
+                        } else {
+                            searchInputEl && searchInputEl.blur();
+                        }
+                    }
+                });
+
+                // Click anywhere outside search to close
+                document.addEventListener('click', (e) => {
+                    const searchWrapper = document.querySelector('.search-wrapper');
+                    if (navContainerEl.classList.contains('search-active')) {
+                        if (searchWrapper && !searchWrapper.contains(e.target)) {
+                            navContainerEl.classList.remove('search-active');
+                            if (searchInputEl) {
+                                searchInputEl.value = '';
+                                searchInputEl.blur();
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Mobile video play toggle (local video only)
+            document.querySelectorAll('.mobile-video-wrap').forEach(wrap => {
+                const vid = wrap.querySelector('video');
+                const overlay = wrap.querySelector('.play-overlay');
+                if (!vid) return;
+                wrap.addEventListener('click', () => {
+                    if (vid.paused) {
+                        vid.play();
+                        if (overlay) overlay.style.opacity = '0';
+                    } else {
+                        vid.pause();
+                        if (overlay) overlay.style.opacity = '1';
+                    }
+                });
+            });
+        })();
+    </script>
+
+
+
+
+
+    <!-- Modal Toggle Six -->
+    <div class="modal fade" id="ModalTogglesix" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content contact-modal-content border-0">
+                <button type="button" class="btn-close modal-close-btn" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <div class="modal-body p-0">
+                    <div class="row g-0">
+                        <!-- Left Side: Cinematic Visual -->
+                        <div class="col-lg-5 modal-visual-side d-none d-lg-flex">
+                            
+                        </div>
+                        <!-- Right Side: Form -->
+                        <div class="col-lg-7 modal-form-side">
+                            <div class="modal-form-wrapper">
+                                <div class="form-header text-center mb-4">
+                                    <h2 class="modal-main-title">BOOK NOW</h2>
+                                    <p class="modal-subtitle">Ready to disrupt the industry together?</p>
+                                </div>
+                                <form id="contactFormModal">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3 field-input">
+                                            <label class="form-label modal-label">First Name</label>
+                                            <input type="text" class="form-control modal-input" placeholder="Dillon"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 mb-3 field-input">
+                                            <label class="form-label modal-label">Last Name</label>
+                                            <input type="text" class="form-control modal-input" placeholder="Media"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 field-input">
+                                        <label class="form-label modal-label">Email Address</label>
+                                        <input type="email" class="form-control modal-input"
+                                            placeholder="hello@dillonmedia.com" required>
+                                    </div>
+                                    <div class="mb-3 field-input">
+                                        <label class="form-label modal-label">Discuss New Projects</label>
+                                        <select class="form-select modal-input">
+                                            <option selected value="new-project" style="color: #000000;">Discuss New Project</option>
+                                            <option value="support" style="color: #000000;">Troubleshooting/Support</option>
+                                            <option value="general" style="color: #000000;">General Questions</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4 field-input">
+                                        <label class="form-label modal-label">Details</label>
+                                        <textarea class="form-control modal-input" rows="4"
+                                            placeholder="Tell us more about your ideas..."></textarea>
+                                    </div>
+                                    <button type="submit" class="modal-submit-btn w-100 py-3">
+                                        SEND MESSAGE
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
