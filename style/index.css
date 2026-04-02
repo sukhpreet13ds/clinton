@@ -22,6 +22,29 @@
         --input-bg: #1a1a1a;
         --input-color: #ffffff;
       }
+.main-content {
+        position: relative;
+      }
+
+      .main-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(2px);
+        pointer-events: none;
+        mask: linear-gradient(to bottom, transparent 0%, black 15%);
+        -webkit-mask: linear-gradient(to bottom, transparent 0%, black 15%);
+      }
+
+      [data-theme='light'] .main-content::before {
+        background: rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(0px) !important;
+        -webkit-backdrop-filter: blur(0px) !important;
+      }
 
       .word-cycler1 {
         display: block;
